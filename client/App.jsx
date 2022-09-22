@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { useCacheUser } from '../auth0-utils'
+import { useCacheUser } from './auth0-utils'
 import { useAuth0 } from '@auth0/auth0-react'
-
-import Nav from './Nav'
-import Fruits from './Fruits'
-import { getUser } from '../api'
-import Register from './Register'
+import Nav from './subcomponents/Nav - good for sign in stuff'
+import { getUser } from './api'
+import Register from './subcomponents/Register'
 import { useDispatch } from 'react-redux'
-import { clearLoggedInUser, updateLoggedInUser } from '../slices/user'
+import { clearLoggedInUser, updateLoggedInUser } from './slices/user'
 
 function App() {
   useCacheUser()
@@ -36,7 +34,7 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/" element={<Fruits />} />
+        <Route path="/" />
         <Route path="register" element={<Register />} />
       </Routes>
     </>

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
-import App from './components/App'
+import App from './App'
 import { Provider } from 'react-redux'
 
 import store from './store'
@@ -10,10 +10,10 @@ import store from './store'
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Auth0Provider
-      domain=''
-      clientId=''
+      domain=""
+      clientId=""
       redirectUri={window.location.origin}
-      audience=''
+      audience=""
     >
       <Provider store={store}>
         <Router>

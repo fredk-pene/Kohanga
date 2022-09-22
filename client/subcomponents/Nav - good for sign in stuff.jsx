@@ -5,7 +5,6 @@ import { useAuth0 } from '@auth0/auth0-react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-
 function Nav() {
   const user = useSelector((state) => state.user)
 
@@ -22,7 +21,7 @@ function Nav() {
 
   return (
     <>
-      <nav className='bg-slate-600'>
+      <nav className="bg-slate-600">
         <Link to="/">Home</Link>
         <IfAuthenticated>
           <Link to="/" onClick={handleLogoff}>
