@@ -1,7 +1,6 @@
 const connection = require('../connection')
 
-
-module.exports = { createOwnersReport, getOwnerReports, editReport }
+module.exports = { createOwnersReport, getOwnerReports, editOwnersStatus }
 
 // get route db
 function getOwnerReports(id, db = connection) {
@@ -78,4 +77,3 @@ function editOwnersStatus(id, data, db = connection) {
   const { approvalStatus } = data
   return db('owners_report').where('id', id).update({ status: approvalStatus })
 }
-
