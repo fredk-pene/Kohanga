@@ -3,6 +3,7 @@ const connection = require('../connection')
 module.exports = {
   getAllRentersReports,
   createRentersReport,
+  editRentersStatus,
 }
 
 function getAllRentersReports(id, db = connection) {
@@ -78,4 +79,10 @@ function createRentersReport(data, db = connection) {
     rate_property_manager_responsiveness: rateResponse,
     other_comments: otherComments,
   })
+}
+
+function editRentersStatus(id, data, db = connection) {
+  const { approvalStatus } = data
+  console.log({ approvalStatus })
+  return db('renters_report').where('id', id).update({ status: approvalStatus })
 }
