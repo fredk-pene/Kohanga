@@ -1,10 +1,10 @@
 const express = require('express')
-// const checkJwt = require('../auth0')
-// const db = require('../db/users')
 const router = express.Router()
+
 const {
   getAllRentersReports,
   createRentersReport,
+  editRentersStatus,
 } = require('../db/functions/renters-report')
 
 // /get renters form submission
@@ -105,6 +105,19 @@ router.post('/:id', (req, res) => {
       console.log(err.message)
       res.status(500)
     })
+})
+
+// patch route for renters submission form
+router.patch('/:id', async (req, res) => {
+  try {
+    const updateStatus = req.body
+    const id = req.params.id
+    const newStatus = await editRentersStatus(id, updateStatus)
+    console.log(newStatus)
+    res.sendStatus(201) //Approved
+  } catch (error) {
+    res.status(500).json('computers says NO!')
+  }
 })
 
 module.exports = router

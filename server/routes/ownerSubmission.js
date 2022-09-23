@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const { createOwnersReport } = require('../db/functions/owners-report')
+const {
+  createOwnersReport,
+  editOwnersStatus,
+} = require('../db/functions/owners-report')
 
 //  post route for owner report
 router.post('/:id', (req, res) => {
@@ -75,6 +78,19 @@ router.post('/:id', (req, res) => {
       console.log(err.message)
       res.status(500)
     })
+})
+
+// patch route for owners submission form
+router.patch('/:id', async (req, res) => {
+  try {
+    const updateStatus = req.body
+    const id = req.params.id
+    const newStatus = await editOwnersStatus(id, updateStatus)
+    console.log(newStatus)
+    res.sendStatus(201) //Approved
+  } catch (error) {
+    res.status(500).json('computers says NO!')
+  }
 })
 
 module.exports = router
