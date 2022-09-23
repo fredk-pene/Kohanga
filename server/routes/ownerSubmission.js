@@ -5,7 +5,7 @@ const {
   getOwnerReports,
 } = require('../db/functions/owners-report')
 
-// /get renters form submission
+// /get owner form submission
 router.get('/:id', (req, res) => {
   console.log('hitting route')
   const id = Number(req.params.id)
