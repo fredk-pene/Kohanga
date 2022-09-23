@@ -1,7 +1,13 @@
 const connection = require('../connection')
 
-module.exports = { createOwnersReport }
+module.exports = { createOwnersReport, getOwnerReports }
 
+function getOwnerReports(id, db = connection) {
+  return db('renters_report')
+    .select()
+    .where('id', id)
+    .where('status', 'approved')
+}
 //  post function for owner report
 function createOwnersReport(data, db = connection) {
   const {
