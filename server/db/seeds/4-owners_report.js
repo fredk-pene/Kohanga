@@ -6,7 +6,7 @@ exports.seed = async function (knex) {
       id: 1,
       house_address_id: 'rowValue1',
       date_submitted: '22092022',
-      status: 'approved',
+      status: 'pending',
       address: '52 Nikau Road, Otahuhu',
       email: 'mikeshpatel39@gmail.com',
       current_rent: '620',
