@@ -1,7 +1,7 @@
 const express = require('express')
 const checkJwt = require('../auth0')
 
-const db = require('../db/users')
+const db = require('../db/functions/users')
 const router = express.Router()
 
 // TODO: use checkJwt as middleware
