@@ -1,6 +1,6 @@
 const connection = require('../connection')
 
-module.exports = { createOwnersReport, getOwnerReports }
+module.exports = { createOwnersReport, getOwnerReports, editReport }
 
 // get route db
 function getOwnerReports(id, db = connection) {
@@ -71,4 +71,9 @@ function createOwnersReport(data, db = connection) {
     composting_system: compost,
     other_comments: otherComments,
   })
+}
+
+function editReport(update, id, db = connection) {
+  // const { status: approved } = update
+  return db('owners_report').where('id', id).update({ approved })
 }

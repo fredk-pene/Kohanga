@@ -3,6 +3,7 @@ const router = express.Router()
 const {
   createOwnersReport,
   getOwnerReports,
+  editReport,
 } = require('../db/functions/owners-report')
 
 // /get owner form submission
@@ -91,6 +92,19 @@ router.post('/:id', (req, res) => {
       res.status(201).json({
         ok: 'ok',
       })
+      return null
+    })
+    .catch((err) => {
+      console.log(err.message)
+      res.status(500)
+    })
+})
+
+router.patch('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  editReport(id, req.body.id, req.body.newReport)
+    .then((updateReport) => {
+      res.json(updateReport)
       return null
     })
     .catch((err) => {
