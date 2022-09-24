@@ -45,7 +45,6 @@ function App() {
         <Route path="/submit/" element={<ReportSubmit />} />
         <Route path="/challenge" element={<Challenge />} />
         <Route path="login" element={<AdminLogin />} />
-
       </Routes>
     </>
   )
