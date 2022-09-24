@@ -9,6 +9,13 @@ export function getOwnerPropertyInformation(id) {
     .catch(logError)
 }
 
+export function getRenterPropertyInformation(id) {
+  return request
+    .get(`${rootUrl}/rentersubmissions/${id}`)
+    .then((res) => res.body)
+    .catch(logError)
+}
+
 export function addFruit(fruit, token) {
   return request
     .post(`${rootUrl}/fruits`)
