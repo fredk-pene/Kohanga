@@ -44,7 +44,9 @@ export default function PropertyDetails() {
         {loading ? (
           <p>loading...</p>
         ) : (
-          allReports.map((report, i) => <Report report={report} key={i} />)
+          allReports.map(
+            (report, i) => report && <Report report={report} key={i} />
+          )
         )}
         <Buttons />
         <UserNavigation />
