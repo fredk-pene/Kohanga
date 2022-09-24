@@ -1,1 +1,14 @@
-//this is the page that hosts the report forms for submission, it will have a toogle to define if either the Owner or the Rental Form is shown
+import React from 'react'
+import OwnersReportForm from '../subcomponents/DetailsReport/OwnersReportForm'
+import RenterReportForm from '../subcomponents/DetailsReport/RenterReportForm'
+
+export default function ReportSubmit() {
+  return (
+    <div className="report-submit-container">
+      {/* This will be where the toggle be  */}
+
+      <OwnersReportForm />
+      <RenterReportForm />
+    </div>
+  )
+}
