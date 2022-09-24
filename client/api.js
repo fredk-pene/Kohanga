@@ -2,10 +2,10 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function getFruits() {
+export function getOwnerPropertyInformation(id) {
   return request
-    .get(`${rootUrl}/fruits`)
-    .then((res) => res.body.fruits)
+    .get(`${rootUrl}/ownersubmissions/${id}`)
+    .then((res) => res.body)
     .catch(logError)
 }
 

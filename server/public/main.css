@@ -1,3 +1,7 @@
+html { 
+  background-color: #F0EBE4;
+}
+
 video {
   width: 100%;
   height: 100vh;
@@ -14,4 +18,57 @@ video {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+.header-navigation { 
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  font-size: 45px;
+  min-height: 100px;
+
+}
+.page-width { 
+  width: 100%;
+  margin-inline: 50px;
+  margin-top: 60px;
+}
+
+@media all and (max-width: 768px) { 
+.page-width { 
+  width: 100%;
+  margin-inline: 15px
+}
+}
+
+.property-details-secondary-text { 
+  font-size: 1rem;
+  font-family: Helvetica, sans-serif
+}
+
+.property-details-individual { 
+  margin-top: 50px;
+
+}
+
+.property-details-inside { 
+  border: 1px solid black;
+  padding: 10px;
+  width: 450px;
+}
+
+.property-details { 
+  max-width: 300px
+}
+
+.small-title { 
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.property-details-text { 
+  font-family: Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
 }
