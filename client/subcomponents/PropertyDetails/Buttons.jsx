@@ -1,1 +1,9 @@
-// this will have the challenge and the add review button
+import React from 'react'
+
+export default function Button() {
+  return (
+    <>
+      <p>Button</p>
+    </>
+  )
+}
