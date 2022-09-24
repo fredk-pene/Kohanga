@@ -2,9 +2,8 @@ const express = require('express')
 const router = express.Router()
 const {
   createOwnersReport,
-
   getOwnerReports,
-  editReport,
+  editOwnersStatus,
 } = require('../db/functions/owners-report')
 
 // /get owner form submission
@@ -29,9 +28,9 @@ router.get('/:id', (req, res) => {
 //  post route for owner report
 router.post('/:id', (req, res) => {
   const id = Number(req.params.id)
+  const dateSubmitted = Date.now()
   const {
     houseId,
-    dateSubmitted,
     approvalStatus,
     address,
     email,
@@ -58,6 +57,7 @@ router.post('/:id', (req, res) => {
     compost,
     otherComments,
   } = req.body
+  //
   const bigData = {
     id,
     houseId,
@@ -88,6 +88,7 @@ router.post('/:id', (req, res) => {
     compost,
     otherComments,
   }
+
   createOwnersReport(bigData)
     .then(() => {
       res.status(201).json({
