@@ -9,7 +9,7 @@ function homePage() {
       <div className="main">
         <video src={video} autoPlay loop muted />
 
-        <div className="logo">Nested</div>
+        <div className="logo">KOHANGA</div>
 
         <AddressSearch />
         {/* <SiteDescription /> */}
