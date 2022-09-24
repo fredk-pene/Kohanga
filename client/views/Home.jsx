@@ -1,19 +1,21 @@
 import React from 'react'
-import video from '../../server/public/assets/bird-nest.mp4'
+import video from '../../server/public/assets/Nest-bird.mp4'
+import AddressSearch from '../subcomponents/HomePage/AddressSearch'
+// import SiteDescription from '../subcomponents/HomePage/SiteDescription'
 
-function videofn() {
+function homePage() {
   return (
     <>
-      {/* <p>sdfs</p> */}
-
       <div className="main">
         <video src={video} autoPlay loop muted />
-        <div className="content">
-          <h1>Nested</h1>
-        </div>
+
+        <div className="logo">KOHANGA</div>
+
+        <AddressSearch />
+        {/* <SiteDescription /> */}
       </div>
     </>
   )
 }
 
-export default videofn
+export default homePage

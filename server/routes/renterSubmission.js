@@ -2,19 +2,17 @@ const express = require('express')
 const router = express.Router()
 
 const {
-  getAllRentersReports,
+  getRentersReports,
   createRentersReport,
   editRentersStatus,
 } = require('../db/functions/renters-report')
 
 // /get renters form submission
 router.get('/:id', (req, res) => {
-  console.log('hitting route')
   const id = Number(req.params.id)
-  getAllRentersReports(id)
+  getRentersReports(id)
     .then((id) => {
-      res.json(id)
-      return res.json()
+      return res.json(id)
     })
     .catch((err) => {
       console.log(err.message)
