@@ -8,12 +8,10 @@ const {
 
 // /get owner form submission
 router.get('/:id', (req, res) => {
-  console.log('hitting route')
   const id = Number(req.params.id)
   getOwnerReports(id)
-    .then((id) => {
-      res.json(id)
-      return res.json()
+    .then((response) => {
+      return res.json(response)
     })
     .catch((err) => {
       console.log(err.message)

@@ -1,16 +1,17 @@
 const connection = require('../connection')
 
 module.exports = {
-  getAllRentersReports,
+  getRentersReports,
   createRentersReport,
   editRentersStatus,
 }
 
-function getAllRentersReports(id, db = connection) {
+function getRentersReports(id, db = connection) {
   return db('renters_report')
     .select()
     .where('id', id)
     .where('status', 'approved')
+    .orderBy('date_submitted')
 }
 // post report function
 function createRentersReport(data, db = connection) {
