@@ -6,6 +6,8 @@ import Report from '../subcomponents/PropertyDetails/Report'
 import UserNavigation from '../subcomponents/UserNavigation'
 import AdminNavigation from '../subcomponents/AdminNavigation'
 import Buttons from '../subcomponents/PropertyDetails/Buttons'
+import Footer from '../subcomponents/Footer'
+
 import { useParams } from 'react-router-dom'
 import { getRenterPropertyInformation } from '../api'
 
@@ -39,6 +41,7 @@ export default function PropertyDetails() {
         <UserNavigation />
         {/* Admin Navigation */}
         <AdminNavigation />
+        <Footer />
       </div>
     </>
   )
