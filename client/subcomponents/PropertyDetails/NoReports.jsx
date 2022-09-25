@@ -3,7 +3,22 @@ import React from 'react'
 export default function NoReports() {
   return (
     <>
-      <p>No Reports</p>
+      <div className="report-container">
+        <div className="report-header">
+          <p className="back-to-search-btn">
+            Unfortunately theres not been any reports for this property yet.
+          </p>
+          <Link className="back-to-search-btn" to="/">
+            <img
+              className="left-arrow"
+              alt="left arrow"
+              width="40px"
+              src="/server/public/assets/left-arrow.svg"
+            />
+            &nbsp; Back to Search
+          </Link>
+        </div>
+      </div>
     </>
   )
 }

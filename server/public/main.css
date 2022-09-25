@@ -8,13 +8,6 @@ video {
   object-fit: cover;
 }
 
-.app { 
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -48,11 +41,10 @@ video {
 }
 .page-width { 
   max-width: 100%;
-  margin-inline: 50px;
+  margin-inline: auto;
   margin-top: 60px;
   max-width: 1600px;
-
-  /* needs to be removed, placeholder to emulate the footer */
+  padding-inline: 50px;
   margin-bottom: 200px;
 }
 
