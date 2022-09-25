@@ -1,17 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const {
-  createOwnersReport,
-  getOwnerReports,
-  editOwnersStatus,
-} = require('../db/functions/owners-report')
 
-// /get owner form submission
+const {
+  getRentersReports,
+  createRentersReport,
+  editRentersStatus,
+} = require('../db/functions/report')
+
+// /get renters form submission
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id)
-  getOwnerReports(id)
-    .then((response) => {
-      return res.json(response)
+  getRentersReports(id)
+    .then((id) => {
+      return res.json(id)
     })
     .catch((err) => {
       console.log(err.message)
@@ -23,19 +24,20 @@ router.get('/:id', (req, res) => {
     })
 })
 
-//  post route for owner report
+// /post form approval
 router.post('/:id', (req, res) => {
   const id = Number(req.params.id)
   const dateSubmitted = Date.now()
   const {
     houseId,
+    reportSubmitter,
     approvalStatus,
     address,
     email,
     currentRent,
     bond,
     rentAdvance,
-    ownerStartDate,
+    StartDate,
     occupancy,
     pets,
     garden,
@@ -50,23 +52,26 @@ router.post('/:id', (req, res) => {
     fireAlarms,
     doubleGlazed,
     noise,
+    rateHh,
     energy,
     waterTank,
     compost,
+    rateManager,
+    rateResponse,
     otherComments,
   } = req.body
-  //
   const bigData = {
     id,
     houseId,
     dateSubmitted,
+    reportSubmitter,
     approvalStatus,
     address,
     email,
     currentRent,
     bond,
     rentAdvance,
-    ownerStartDate,
+    StartDate,
     occupancy,
     pets,
     garden,
@@ -81,13 +86,15 @@ router.post('/:id', (req, res) => {
     fireAlarms,
     doubleGlazed,
     noise,
+    rateHh,
     energy,
     waterTank,
     compost,
+    rateManager,
+    rateResponse,
     otherComments,
   }
-
-  createOwnersReport(bigData)
+  createRentersReport(bigData)
     .then(() => {
       res.status(201).json({
         ok: 'ok',
@@ -100,12 +107,12 @@ router.post('/:id', (req, res) => {
     })
 })
 
-// patch route for owners submission form
+// patch route for renters submission form
 router.patch('/:id', async (req, res) => {
   try {
     const updateStatus = req.body
     const id = req.params.id
-    const newStatus = await editOwnersStatus(id, updateStatus)
+    const newStatus = await editRentersStatus(id, updateStatus)
     console.log(newStatus)
     res.sendStatus(201) //Approved
   } catch (error) {
