@@ -2,6 +2,14 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
+export function getAddressSuggestions(string) {
+  return request
+    .get(`${rootUrl}/address`)
+    .query({ search: string })
+    .then((res) => res.body)
+    .catch((error) => console.error(error))
+}
+
 export function getOwnerPropertyInformation(id) {
   return request
     .get(`${rootUrl}/reportsubmission/${id}`)
