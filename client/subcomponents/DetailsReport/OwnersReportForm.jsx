@@ -113,10 +113,10 @@ export default function OwnersReportForm() {
             <div className="border-black border px-3 pt-2">
               Your Details
               <br></br>
-              <div>
+              <div className='mt-2'>
                 <label htmlFor="email">what is your email?</label>
                 <input
-                  className="py-2 px-3 h-6 w-60 border-black border rounded-full bg-stone-200"
+                  className="py-2 px-3 h-6 w-60 mb-2 border-black border rounded-full bg-stone-200 flex "
                   id="email"
                   name="email"
                   type="text"
@@ -125,6 +125,9 @@ export default function OwnersReportForm() {
               <div>
                 Please upload proof that you are the Owner of this property
               </div>
+                <input id="file" name="file" type="file" className='mb-2' onChange={(event) => {
+                  setFieldValue("file", event.currentTarget.files[0]);
+                }} />
               <div className="mb-10">Add any photos of the house</div>
             </div>
           </div>
@@ -248,7 +251,7 @@ export default function OwnersReportForm() {
                 </label>
               </div>
             </div>
-            <div className="flex flex-wrap mb-2 pt-2">
+            <div className="flex flex-wrap mb-3 pt-2">
               <div className="md:w-1/3">
                 <label htmlFor="energy">Energy Sources</label>
                 <input
@@ -258,7 +261,7 @@ export default function OwnersReportForm() {
                   type="text"
                 />
               </div>
-              <div className="md:w-1/3 px-2">
+              <div className="md:w-1/2 px-2">
                 <label htmlFor="noise">Is there any neighborhood noise?</label>
                 <input
                   className="py-2 px-3 h-6 w-60 border-black border rounded-full bg-stone-200"
@@ -271,7 +274,7 @@ export default function OwnersReportForm() {
             <div className="w-full md:w-1/2 mb-3">
               <label htmlFor="garden">Describe the Garden</label>
               <input
-                className="py-2 px-3 w-60 border-black border rounded-lg bg-stone-200"
+                className="flex py-2 px-3 w-60 border-black border rounded-lg bg-stone-200"
                 id="garden"
                 name="garden"
                 type="text"
@@ -287,9 +290,9 @@ export default function OwnersReportForm() {
               <option>🏡🏡🏡🏡🏡</option>
             </select>
           </div>
-          <div className='mb-4'>
+          <div className='mb-4 mt-4'>
             <button
-              className="absolute bottom-12 left-9 bg-dark-green hover:bg-lime-900 text-white py-1 px-4 rounded-full"
+              className="bottom-12 left-10 ml-3 bg-dark-green hover:bg-lime-900 text-white py-1 px-5 rounded-full"
               type="submit"
             >
               Submit Report
