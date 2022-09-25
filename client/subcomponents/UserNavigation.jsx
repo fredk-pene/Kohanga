@@ -14,6 +14,9 @@ export default function UserNavigation() {
           />
           &nbsp; Back to Search
         </Link>
+        <Link to="/submit" className="nav-submit-report-btn">
+          Submit Report
+        </Link>
       </div>
     </>
   )

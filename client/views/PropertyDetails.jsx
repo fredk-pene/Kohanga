@@ -36,10 +36,9 @@ export default function PropertyDetails() {
           )
         )}
         <Buttons />
-        <UserNavigation />
-        {/* Admin Navigation */}
-        <AdminNavigation />
       </div>
+      {/* <UserNavigation /> */}
+      <AdminNavigation />
     </>
   )
 }
