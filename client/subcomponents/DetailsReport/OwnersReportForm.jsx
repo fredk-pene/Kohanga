@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFormik } from 'formik'
+import FileUploader from './FileUploader'
 
 export default function OwnersReportForm() {
   const formik = useFormik({
@@ -20,7 +21,7 @@ export default function OwnersReportForm() {
     },
     onSubmit: async (values) => {
       alert(JSON.stringify(values, null, 2))
-      let formData = new FormData();
+      let formData = new FormData()
 
       formData.append('address', values.address)
       formData.append('currentRent', values.currentRent)
@@ -36,7 +37,6 @@ export default function OwnersReportForm() {
 
       console.log(formData.append('address', values.address))
     },
-
   })
 
   return (
@@ -45,9 +45,7 @@ export default function OwnersReportForm() {
         <div className="flex flex-wrap mx-3 mb-6 border-black border">
           {/* HOUSE DETAILS */}
           <div className="w-full md:w-1/2">
-              <div className='mb-1 px-3'>
-              House Details
-              </div>
+            <div className="mb-1 px-3">House Details</div>
             <div className="w-full md:w-1/2 px-3 mb-4 pt-2">
               <label className="flex" htmlFor="address">
                 Address
@@ -149,20 +147,9 @@ export default function OwnersReportForm() {
                 />
               </div>
               <div>
-                Please upload proof that you are the Owner of this property
+                Please upload proof of home ownership, and property images
+                <FileUploader />
               </div>
-
-              <input
-                id="file"
-                name="file"
-                type="file"
-                className="mb-2"
-                onChange={(event) => {
-                  setFieldValue('file', event.currentTarget.files[0])
-                }}
-              />
-
-              <div className="mb-10">Add any photos of the house</div>
             </div>
           </div>
           <br></br>
@@ -180,7 +167,9 @@ export default function OwnersReportForm() {
               />
             </div>
             <div className="w-full md:w-1/2 mb-3">
-              <label className='flex' htmlFor="pets">Are Pets Allowed?</label>
+              <label className="flex" htmlFor="pets">
+                Are Pets Allowed?
+              </label>
               <input
                 type="checkbox"
                 name="toggle"
@@ -286,7 +275,6 @@ export default function OwnersReportForm() {
               </div>
             </div>
             <div className="flex pt-2">
-
               <div className="w-full md:w-1/3 mb-2">
                 <label className="flex" htmlFor="ventilation">
                   <input
