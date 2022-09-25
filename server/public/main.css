@@ -216,3 +216,28 @@ input[type=text], select {
   display: flex;
   flex-direction: column;
 }
+
+/* Footer Styles */
+
+.navigation-bar { 
+  width: 100%;
+  backdrop-filter: blur(4px);
+  background-color:rgba(168,	168,168, .7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 25px;
+  height: 80px;
+  border-top: 1px solid black;
+  position: fixed;
+  bottom: 0;
+}
+
+.back-to-search-btn { 
+  font-size: 24px;
+}
+
+.left-arrow {
+  display: inline-block;
+  padding-bottom: 4px;
+} 
