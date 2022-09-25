@@ -8,6 +8,12 @@ video {
   object-fit: cover;
 }
 
+.app { 
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -45,7 +51,9 @@ video {
   margin-inline: 50px;
   margin-top: 60px;
   max-width: 1600px;
-  margin-inline: auto;
+
+  /* needs to be removed, placeholder to emulate the footer */
+  margin-bottom: 200px;
 }
 
 @media all and (max-width: 768px) { 
@@ -216,3 +224,50 @@ input[type=text], select {
   display: flex;
   flex-direction: column;
 }
+
+/* Footer Styles */
+
+.navigation-bar { 
+  width: 100%;
+
+  background-color:rgba(168,	168,168, .7);
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  justify-content: space-between;
+  padding-inline: 25px;
+  height: 80px;
+  border-top: 1px solid black;
+  position: fixed;
+  bottom: 0;
+}
+
+.back-to-search-btn { 
+  font-size: 20px;
+}
+
+.left-arrow {
+  display: inline-block;
+  padding-bottom: 4px;
+} 
+
+
+.nav-submit-report-btn { 
+  font-size: 20px;
+  padding: 3px 35px;
+  border: 1px solid black;
+  border-radius:30px;
+  transition: color 50ms ease-in-out, border 50ms ease-in-out;
+}
+
+.nav-submit-report-btn:hover { 
+  color: white;
+  border: 1px solid white;
+}
+
+.admin-nav-btn-container { 
+  display: flex;
+  width: 390px;
+  justify-content: space-between;
+}
+
