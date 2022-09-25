@@ -1,15 +1,16 @@
 exports.up = (knex) => {
-  return knex.schema.createTable('renters_report', (table) => {
+  return knex.schema.createTable('report', (table) => {
     table.increments('id')
     table.integer('house_address_id')
     table.integer('date_submitted')
+    table.string('report_submitter')
     table.string('status')
     table.string('address')
     table.string('email')
     table.integer('current_rent')
     table.integer('bond')
     table.integer('rent_advance')
-    table.integer('rent_start_date')
+    table.integer('start_date')
     table.integer('occupancy')
     table.integer('pets')
     table.string('garden')
@@ -37,5 +38,5 @@ exports.up = (knex) => {
 }
 
 exports.down = (knex) => {
-  return knex.schema.dropTable('renters_report')
+  return knex.schema.dropTable('report')
 }
