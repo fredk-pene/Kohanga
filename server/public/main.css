@@ -51,6 +51,9 @@ video {
   margin-inline: 50px;
   margin-top: 60px;
   max-width: 1600px;
+
+  /* needs to be removed, placeholder to emulate the footer */
+  margin-bottom: 200px;
 }
 
 @media all and (max-width: 768px) { 
