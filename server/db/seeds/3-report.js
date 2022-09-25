@@ -4,7 +4,7 @@ exports.seed = async function (knex) {
   await knex('report').insert([
     {
       id: 1,
-      house_address_id: 'rowValue1',
+      house_address_id: '393-Wairau-Road-Totara-Vale-Auckland-0629',
       date_submitted: '22092022',
       report_submitter: 'renter',
       status: 'approved',
@@ -40,7 +40,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 2,
-      house_address_id: 'rowValue1',
+      house_address_id: '148-Howe-Street-Freemans-Bay-Auckland-1011',
       date_submitted: '23092022',
       report_submitter: 'renter',
       status: 'approved',
@@ -74,7 +74,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 3,
-      house_address_id: 'rowValue1',
+      house_address_id: '31-Walters-Road-Mount-Eden-Auckland-1024',
       date_submitted: '23092022',
       report_submitter: 'renter',
       status: 'approved',
@@ -110,7 +110,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 4,
-      house_address_id: 'rowValue1',
+      house_address_id: '52-Nikau-Road-Otahuhu-Auckland-1062',
       date_submitted: '22092022',
       status: 'approved',
       report_submitter: 'owner',

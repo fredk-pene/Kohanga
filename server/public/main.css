@@ -213,5 +213,6 @@ input[type=text], select {
 .address-suggestions-container { 
   background-color: white;
   max-width: 800px;
-
+  display: flex;
+  flex-direction: column;
 }
