@@ -9,9 +9,8 @@ module.exports = {
 function getRentersReports(id, db = connection) {
   return db('report')
     .select()
-    .where('id', id)
+    .where('house_address_id', id)
     .where('status', 'approved')
-    .orderBy('date_submitted')
 }
 // post report function
 function createRentersReport(data, db = connection) {

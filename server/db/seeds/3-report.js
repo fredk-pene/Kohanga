@@ -110,7 +110,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 4,
-      house_address_id: 'rowValue1',
+      house_address_id: '52-Nikau-Road-Otahuhu-Auckland-1062',
       date_submitted: '22092022',
       status: 'approved',
       report_submitter: 'owner',

@@ -9,10 +9,10 @@ const {
 
 // /get renters form submission
 router.get('/:id', (req, res) => {
-  const id = Number(req.params.id)
+  const id = req.params.id
   getRentersReports(id)
-    .then((id) => {
-      return res.json(id)
+    .then((response) => {
+      return res.json(response)
     })
     .catch((err) => {
       console.log(err.message)

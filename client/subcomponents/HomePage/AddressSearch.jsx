@@ -27,7 +27,6 @@ export default function addressSearch() {
     const formatted = input?.replace(/\s/g, '+')
     const addresses = await getAddressSuggestions(formatted)
     setSuggestions(addresses)
-    console.log(addresses)
   }, [formik.values])
 
   function showAnyErrors(inputName) {

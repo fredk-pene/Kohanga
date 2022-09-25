@@ -11,17 +11,13 @@ import { getRenterPropertyInformation } from '../api'
 
 export default function PropertyDetails() {
   const [renterReports, setRenterReports] = useState([])
-
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
 
-  const allReports = [...renterReports]
-
   useEffect(async () => {
     setLoading(true)
-    const renterReports = await getRenterPropertyInformation(id)
-    setRenterReports(renterReports)
-
+    const reports = await getRenterPropertyInformation(id)
+    setRenterReports(reports)
     setLoading(false)
   }, [])
 
@@ -30,13 +26,12 @@ export default function PropertyDetails() {
       <Header />
       <div className="page-width">
         <BasicPropertyInfo />
-        {/* If theres no Report Available, render this */}
-        {!allReports && <NoReports />}
-        {/* Else load this Report, and loop through all reports*/}
-        {loading ? (
+        {!renterReports ? (
+          <NoReports />
+        ) : loading ? (
           <p>loading...</p>
         ) : (
-          allReports.map(
+          renterReports.map(
             (report, i) => report && <Report report={report} key={i} />
           )
         )}
