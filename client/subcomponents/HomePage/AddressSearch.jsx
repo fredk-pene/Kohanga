@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import * as Yup from 'yup'
 import { getAddressSuggestions } from '../../api'
 
@@ -36,6 +36,10 @@ export default function addressSearch() {
     ) : null
   }
 
+  function formatAddressToString(address) {
+    return address?.replaceAll(',', '').replace(/\s/g, '-')
+  }
+
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
@@ -55,9 +59,15 @@ export default function addressSearch() {
               <div className="address-suggestions-container">
                 {suggestions.addresses.map((address) => {
                   return (
-                    <p key={address.DPID} className="suggested-address">
+                    <Link
+                      to={`/property/${formatAddressToString(
+                        address.FullAddress
+                      )}`}
+                      key={address.DPID}
+                      className="suggested-address"
+                    >
                       {address.FullAddress}
-                    </p>
+                    </Link>
                   )
                 })}
               </div>
