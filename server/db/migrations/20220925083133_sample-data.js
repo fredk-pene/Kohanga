@@ -3,7 +3,8 @@ exports.up = (knex) => {
     table.increments('id')
     table.integer('house_address_id')
     //Sample Data
-    table.string('house_address')
+    table.string('address')
+    table.string('bedrooms')
     table.string('bathrooms')
     table.string('car_parks')
     table.string('internet')

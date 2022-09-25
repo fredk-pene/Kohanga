@@ -4,7 +4,7 @@ const rootUrl = '/api/v1'
 
 export function fetchSampleData(id) {
   return request
-    .get(`${rootUrl}/sampleData${id}`)
+    .get(`${rootUrl}/sampleData/${id}`)
     .then((res) => res.body)
     .catch((error) => console.error(error))
 }
