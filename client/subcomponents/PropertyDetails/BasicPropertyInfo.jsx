@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function BasicPropertyInfo() {
-  const key = 'AIzaSyD2sKeOJDzdVCq1njl1S0g2YW25GCgkC0w'
+  const [sampleData, setSampleData] = useState({})
+
+  useEffect(() => {}, [])
+
+  const googleKey = 'AIzaSyD2sKeOJDzdVCq1njl1S0g2YW25GCgkC0w'
   const address =
     '393 Wairau Road, Milford-Glenfield, Auckland 0629, New Zealand'
 
@@ -60,7 +64,7 @@ export default function BasicPropertyInfo() {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${key}
+          src={`https://www.google.com/maps/embed/v1/place?key=${googleKey}
     &q=${address}`}
         ></iframe>
       </div>
