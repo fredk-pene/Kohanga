@@ -2,10 +2,10 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function addressSuggestions(string) {
+export function getAddressSuggestions(string) {
   return request
     .get(`${rootUrl}/address`)
-    .send(string)
+    .query({ search: string })
     .then((res) => res.body)
     .catch((error) => console.error(error))
 }
