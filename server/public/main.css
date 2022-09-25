@@ -173,7 +173,7 @@ color: red;
 .searchBar { 
   margin-top: 35vh;
   width: 80vw;
-  max-width: 1000px;
+  max-width: 1200px;
 
 }
 
@@ -212,5 +212,6 @@ input[type=text], select {
 
 .address-suggestions-container { 
   background-color: white;
-  
+  max-width: 800px;
+
 }
