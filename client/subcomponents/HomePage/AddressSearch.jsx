@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import * as Yup from 'yup'
+import { getAddressSuggestions } from '../../api'
 
 const searchSchema = Yup.object().shape({
   address: Yup.string()
@@ -10,6 +11,7 @@ const searchSchema = Yup.object().shape({
 })
 
 export default function addressSearch() {
+  const [suggestions, setSuggestions] = useState('')
   const { id } = useParams()
   const navigate = useNavigate()
   const formik = useFormik({
@@ -20,29 +22,56 @@ export default function addressSearch() {
     validationSchema: searchSchema,
   })
 
+  useEffect(async () => {
+    const input = formik.values['autocomplete-search']
+    const formatted = input?.replace(/\s/g, '+')
+    const addresses = await getAddressSuggestions(formatted)
+    setSuggestions(addresses)
+  }, [formik.values])
+
   function showAnyErrors(inputName) {
     return formik.errors[inputName] && formik.touched[inputName] ? (
       <p className="inputError">{formik.errors[inputName]}</p>
     ) : null
   }
 
+  function formatAddressToString(address) {
+    return address?.replaceAll(',', '').replace(/\s/g, '-')
+  }
+
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
-        <div className="searchBar">
-          {/* <p>This is the seach bar</p> */}
-          {showAnyErrors('address')}
-          <input
-            type="text"
-            placeholder="Search Address"
-            id="autocomplete-search"
-            autoComplete="off"
-            onChange={formik.handleChange}
-            value={formik.values.address}
-          />
-          {/* <button type="" className="">
-            
-          </button> */}
+        <div className="search-container">
+          <div className="searchBar">
+            {/* <p>This is the seach bar</p> */}
+            {showAnyErrors('address')}
+            <input
+              type="text"
+              placeholder="Search Address"
+              id="autocomplete-search"
+              autoComplete="off"
+              onChange={formik.handleChange}
+              value={formik.values.address}
+            />
+            {suggestions.addresses && (
+              <div className="address-suggestions-container">
+                {suggestions.addresses.map((address) => {
+                  return (
+                    <Link
+                      to={`/property/${formatAddressToString(
+                        address.FullAddress
+                      )}`}
+                      key={address.DPID}
+                      className="suggested-address"
+                    >
+                      {address.FullAddress}
+                    </Link>
+                  )
+                })}
+              </div>
+            )}
+          </div>
         </div>
       </form>
       <p className="homeDiscription">

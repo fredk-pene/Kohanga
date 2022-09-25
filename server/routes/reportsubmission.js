@@ -2,19 +2,17 @@ const express = require('express')
 const router = express.Router()
 
 const {
-  getAllRentersReports,
+  getRentersReports,
   createRentersReport,
   editRentersStatus,
-} = require('../db/functions/renters-report')
+} = require('../db/functions/report')
 
 // /get renters form submission
 router.get('/:id', (req, res) => {
-  console.log('hitting route')
-  const id = Number(req.params.id)
-  getAllRentersReports(id)
-    .then((id) => {
-      res.json(id)
-      return res.json()
+  const id = req.params.id
+  getRentersReports(id)
+    .then((response) => {
+      return res.json(response)
     })
     .catch((err) => {
       console.log(err.message)
@@ -32,13 +30,14 @@ router.post('/:id', (req, res) => {
   const dateSubmitted = Date.now()
   const {
     houseId,
+    reportSubmitter,
     approvalStatus,
     address,
     email,
     currentRent,
     bond,
     rentAdvance,
-    rentStartDate,
+    StartDate,
     occupancy,
     pets,
     garden,
@@ -65,13 +64,14 @@ router.post('/:id', (req, res) => {
     id,
     houseId,
     dateSubmitted,
+    reportSubmitter,
     approvalStatus,
     address,
     email,
     currentRent,
     bond,
     rentAdvance,
-    rentStartDate,
+    StartDate,
     occupancy,
     pets,
     garden,

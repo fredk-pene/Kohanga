@@ -1,15 +1,15 @@
 const connection = require('../connection')
 
 module.exports = {
-  getAllRentersReports,
+  getRentersReports,
   createRentersReport,
   editRentersStatus,
 }
 
-function getAllRentersReports(id, db = connection) {
-  return db('renters_report')
+function getRentersReports(id, db = connection) {
+  return db('report')
     .select()
-    .where('id', id)
+    .where('house_address_id', id)
     .where('status', 'approved')
 }
 // post report function
@@ -17,13 +17,14 @@ function createRentersReport(data, db = connection) {
   const {
     houseId,
     dateSubmitted,
+    reportSubmitter,
     approvalStatus,
     address,
     email,
     currentRent,
     bond,
     rentAdvance,
-    rentStartDate,
+    StartDate,
     occupancy,
     pets,
     garden,
@@ -47,16 +48,17 @@ function createRentersReport(data, db = connection) {
     otherComments,
   } = data
 
-  return db('renters_report').insert({
+  return db('report').insert({
     house_address_id: houseId,
     date_submitted: dateSubmitted,
     status: approvalStatus,
+    report_submitter: reportSubmitter,
     address: address,
     email: email,
     current_rent: currentRent,
     bond: bond,
     rent_advance: rentAdvance,
-    rent_start_date: rentStartDate,
+    start_date: StartDate,
     occupancy: occupancy,
     pets: pets,
     garden: garden,
@@ -84,5 +86,5 @@ function createRentersReport(data, db = connection) {
 function editRentersStatus(id, data, db = connection) {
   const { approvalStatus } = data
   console.log({ approvalStatus })
-  return db('renters_report').where('id', id).update({ status: approvalStatus })
+  return db('report').where('id', id).update({ status: approvalStatus })
 }
