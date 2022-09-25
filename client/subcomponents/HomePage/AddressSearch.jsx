@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import { useNavigate, useParams } from 'react-router-dom'
 import * as Yup from 'yup'
+import { addressSuggestions } from '../../api'
+
+const [suggestions, setSuggestions] = useState('')
 
 const searchSchema = Yup.object().shape({
   address: Yup.string()
@@ -19,6 +22,13 @@ export default function addressSearch() {
     },
     validationSchema: searchSchema,
   })
+
+  useEffect(async () => {
+    const input = formik.values['autocomplete-search']
+    const formatted = input?.replace(/\s/g, '+')
+    const suggestions = await addressSuggestions(formatted)
+    setSuggestions(suggestions)
+  }, [formik.values])
 
   function showAnyErrors(inputName) {
     return formik.errors[inputName] && formik.touched[inputName] ? (
