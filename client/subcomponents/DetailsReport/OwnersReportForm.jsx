@@ -137,7 +137,7 @@ export default function OwnersReportForm() {
               Your Details
               <br></br>
               <div className="mt-2">
-                <label htmlFor="email">what is your email?</label>
+                <label htmlFor="email">what is your email? (incase we need to contact you)</label>
                 <input
                   className="py-2 px-3 h-6 w-60 mb-2 border-black border rounded-full bg-stone-200 flex "
                   id="email"
