@@ -257,12 +257,13 @@ input[type=text], select {
   padding: 3px 35px;
   border: 1px solid black;
   border-radius:30px;
-  transition: color 50ms ease-in-out, border 50ms ease-in-out;
+  transition: color 50ms ease-in-out, background-color 50ms ease-in-out;
 }
 
 .nav-submit-report-btn:hover { 
   color: white;
-  border: 1px solid white;
+  background-color: black;
+
 }
 
 .admin-nav-btn-container { 
@@ -271,3 +272,13 @@ input[type=text], select {
   justify-content: space-between;
 }
 
+.report-challenge-btn-bar { 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.challenge-copy { 
+  padding-right: 30px;
+}

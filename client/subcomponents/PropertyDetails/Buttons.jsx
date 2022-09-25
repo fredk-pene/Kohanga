@@ -6,7 +6,9 @@ export default function Button() {
     <>
       <div className="report-challenge-btn-bar">
         <div className="report-challenge-btn-bar">
-          <p className="back-to-search-btn">See Something thats not right?</p>
+          <p className="back-to-search-btn challenge-copy">
+            See something thats not right?
+          </p>
           <Link to="/challenge" className="nav-submit-report-btn">
             Challenge Report
           </Link>
