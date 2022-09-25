@@ -4,14 +4,14 @@ const rootUrl = '/api/v1'
 
 export function getOwnerPropertyInformation(id) {
   return request
-    .get(`${rootUrl}/ownersubmissions/${id}`)
+    .get(`${rootUrl}/reportsubmission/${id}`)
     .then((res) => res.body)
     .catch(logError)
 }
 
 export function getRenterPropertyInformation(id) {
   return request
-    .get(`${rootUrl}/rentersubmissions/${id}`)
+    .get(`${rootUrl}/reportsubmission/${id}`)
     .then((res) => res.body)
     .catch(logError)
 }
