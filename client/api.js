@@ -2,6 +2,14 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
+export function postReport(report) {
+  return request
+    .post(`${rootUrl}/reportsubmission/`)
+    .send(report)
+    .then((res) => res.body)
+    .catch((err) => console.error(err.message))
+}
+
 export function fetchSampleData(id) {
   return request
     .get(`${rootUrl}/sampleData/${id}`)

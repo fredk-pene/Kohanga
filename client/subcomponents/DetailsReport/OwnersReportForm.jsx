@@ -1,13 +1,30 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
+import { getAddressSuggestions, postReport } from '../../api'
 
 export default function OwnersReportForm() {
+  function checkIfTrue(key) {
+    return key[0] ? true : false
+  }
+
   const formik = useFormik({
     initialValues: {
       address: '',
+      status: '',
       currentRent: '',
       bond: '',
+      homeHealthInsulationCeiling: [],
+      homeHealthInsulationWall: [],
+      homeHealthInsulationFloor: [],
+      pets: [],
+      securitySystem: [],
+      fireAlarms: [],
+      doubleGlazed: [],
+      compost: [],
+      ventilationSystem: [],
+      homeHealthInsulationFan: [],
+      homeHealthRangeHood: [],
       rentAdvance: '',
       ownerStartDate: '',
       occupancy: '',
@@ -17,33 +34,103 @@ export default function OwnersReportForm() {
       noise: '',
       garden: '',
       heating: '',
-      toggle: false,
-      checked: [],
+      waterTank: '',
     },
     onSubmit: async (values) => {
-      alert(JSON.stringify(values, null, 2))
       let formData = new FormData()
 
-      formData.append('address', values.address)
-      formData.append('currentRent', values.currentRent)
-      formData.append('bond', values.bond)
-      formData.append('rentAdvance', values.rentAdvance)
-      formData.append('ownerStartDate', values.ownerStartDate)
-      formData.append('occupancy', values.occupancy)
-      formData.append('otherComments', values.otherComments)
-      formData.append('energy', values.energy)
-      formData.append('noise', values.noise)
-      formData.append('garden', values.garden)
-      formData.append('heating', values.heating)
+      async function validateAddress(address) {
+        const formatted = address?.replace(/\s/g, '+')
+        const newAddress = await getAddressSuggestions(formatted)[0]
 
-      console.log(formData.append('address', values.address))
+        return newAddress
+      }
+
+      const formattedAddress = await validateAddress('31 WALTERS ROAD')[0]
+
+      const formattedData = {
+        // address: formattedAddress,
+        // houseId: formattedAddress?.replaceAll(',', '').replace(/\s/g, '-'),
+        address: values.address,
+        houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
+        status: 'pending',
+        currentRent: values.currentRent,
+        bond: values.bond,
+        homeHealthInsulationCeiling: checkIfTrue(
+          values.homeHealthInsulationCeiling
+        ),
+        homeHealthInsulationWall: checkIfTrue(values.homeHealthInsulationWall),
+        homeHealthInsulationFloor: checkIfTrue(
+          values.homeHealthInsulationFloor
+        ),
+        pets: checkIfTrue(values.pets),
+        securitySystem: checkIfTrue(values.securitySystem),
+        fireAlarms: checkIfTrue(values.fireAlarms),
+        doubleGlazed: checkIfTrue(values.doubleGlazed),
+        compost: checkIfTrue(values.compost),
+        ventilationSystem: checkIfTrue(values.ventilationSystem),
+        homeHealthInsulationFan: checkIfTrue(values.bathroomExtractor),
+        homeHealthRangeHood: checkIfTrue(values.rangeHood),
+        rentAdvance: values.rentAdvance,
+        ownerStartDate: values.ownerStartDate,
+        occupancy: values.occupancy,
+        reportSubmitter: 'Landlord',
+        email: values.email,
+        otherComments: values.otherComments,
+        energy: values.energy,
+        noise: values.noise,
+        garden: values.garden,
+        heating: values.heating,
+        waterTank: checkIfTrue(values.rangeHood),
+      }
+
+      postReport(formattedData)
+
+      // formData.append('address', values.address)
+      // formData.append('currentRent', values.currentRent)
+      // formData.append('bond', values.bond)
+      // formData.append(
+      //   'homeHealthInsulationCeiling',
+      //   checkIfTrue(values.homeHealthInsulationCeiling)
+      // )
+      // formData.append(
+      //   'homeHealthInsulationWall',
+      //   checkIfTrue(values.homeHealthInsulationWall)
+      // )
+      // formData.append(
+      //   'homeHealthInsulationFloor',
+      //   checkIfTrue(values.homeHealthInsulationFloor)
+      // )
+      // formData.append('pets', checkIfTrue(values.pets))
+      // formData.append('securitySystem', checkIfTrue(values.securitySystem))
+      // formData.append('fireAlarms', checkIfTrue(values.fireAlarms))
+      // formData.append('doubleGlazed', checkIfTrue(values.doubleGlazed))
+      // formData.append('compost', checkIfTrue(values.compost))
+      // formData.append(
+      //   'ventilationSystem',
+      //   checkIfTrue(values.ventilationSystem)
+      // )
+      // formData.append(
+      //   'bathroomExtractor',
+      //   checkIfTrue(values.bathroomExtractor)
+      // )
+      // formData.append('rangeHood', checkIfTrue(values.rangeHood))
+      // formData.append('ownerStartDate', values.ownerStartDate)
+      // formData.append('occupancy', values.occupancy)
+      // formData.append('otherComments', values.otherComments)
+      // formData.append('energy', values.energy)
+      // formData.append('noise', values.noise)
+      // formData.append('garden', values.garden)
+      // formData.append('heating', values.heating)
+      // console.log(checkIfTrue(values.securitySystem))
+      // console.log(JSON.stringify(values, null, 2))
     },
   })
 
   return (
-    <div className="absolute pt-3">
+    <div className="pt-3">
       <form onSubmit={formik.handleSubmit} className="w-full ">
-        <div className="flex flex-wrap mx-3 mb-6 border-black border">
+        <div className="flex flex-wrap mx-3 mb-6 border-black border ">
           {/* HOUSE DETAILS */}
           <div className="w-full md:w-1/2">
             <div className="mb-1 px-3">House Details</div>
@@ -175,7 +262,7 @@ export default function OwnersReportForm() {
               </label>
               <input
                 type="checkbox"
-                name="toggle"
+                name="pets"
                 id="pets"
                 onChange={formik.handleChange}
               />
@@ -187,7 +274,7 @@ export default function OwnersReportForm() {
                 </label>
                 <input
                   type="checkbox"
-                  name="toggle"
+                  name="securitySystem"
                   id="securitySystem"
                   onChange={formik.handleChange}
                 />
@@ -199,7 +286,7 @@ export default function OwnersReportForm() {
                 </label>
                 <input
                   type="checkbox"
-                  name="toggle"
+                  name="fireAlarms"
                   id="fireAlarms"
                   onChange={formik.handleChange}
                 />
@@ -212,7 +299,7 @@ export default function OwnersReportForm() {
                 </label>
                 <input
                   type="checkbox"
-                  name="toggle"
+                  name="doubleGlazed"
                   id="doubleGlazed"
                   onChange={formik.handleChange}
                 />
@@ -223,7 +310,7 @@ export default function OwnersReportForm() {
                 <input
                   className="flex"
                   type="checkbox"
-                  name="toggle"
+                  name="compost"
                   id="compost"
                   onChange={formik.handleChange}
                 />
@@ -236,7 +323,7 @@ export default function OwnersReportForm() {
                 </label>
                 <input
                   type="checkbox"
-                  name="toggle"
+                  name="waterTank"
                   id="waterTank"
                   onChange={formik.handleChange}
                 />
@@ -245,15 +332,13 @@ export default function OwnersReportForm() {
               <div className="w-full md:w-1/1 pl-48 flex-row space-x-5">
                 <label
                   className="inline-block"
-                  htmlFor="    homeHealthInsulationWall,
-"
+                  htmlFor=" homeHealthInsulationWall"
                 >
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="toggle"
-                    id="    homeHealthInsulationWall,
-"
+                    name="homeHealthInsulationWall"
+                    id="homeHealthInsulationWall"
                     onChange={formik.handleChange}
                   />
                   Wall
@@ -266,7 +351,7 @@ export default function OwnersReportForm() {
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="toggle"
+                    name="homeHealthInsulationCeiling"
                     id="homeHealthInsulationCeiling"
                     onChange={formik.handleChange}
                   />
@@ -275,14 +360,14 @@ export default function OwnersReportForm() {
 
                 <label
                   className="inline-block"
-                  htmlFor="    homeHealthInsulationFloor,
+                  htmlFor="homeHealthInsulationFloor,
 "
                 >
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="toggle"
-                    id="    homeHealthInsulationFloor,
+                    name="homeHealthInsulationFloor"
+                    id="homeHealthInsulationFloor,
 "
                     onChange={formik.handleChange}
                   />
@@ -295,7 +380,7 @@ export default function OwnersReportForm() {
                 <label className="flex" htmlFor="ventilationSystem">
                   <input
                     type="checkbox"
-                    name="toggle"
+                    name="ventilationSystem"
                     id="ventilationSystem"
                     onChange={formik.handleChange}
                   />
@@ -309,7 +394,7 @@ export default function OwnersReportForm() {
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="toggle"
+                    name="bathroomExtractor"
                     id="bathroomExtractor"
                     onChange={formik.handleChange}
                   />
@@ -319,7 +404,7 @@ export default function OwnersReportForm() {
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="toggle"
+                    name="rangeHood"
                     id="rangeHood"
                     onChange={formik.handleChange}
                   />
@@ -361,7 +446,10 @@ export default function OwnersReportForm() {
             </div>
             {/* HOUSE RATING */}
             <div>Rate the house out of 5</div>
-            <select className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+            <select
+              name="rateH"
+              className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+            >
               <option>🏡</option>
               <option>🏡🏡</option>
               <option>🏡🏡🏡</option>
