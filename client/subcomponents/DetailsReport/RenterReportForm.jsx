@@ -89,7 +89,6 @@ export default function RenterReportForm({ address }) {
 
       navigate(`/thankyou`)
       postReport(formattedData)
-      console.log(formattedData)
     },
   })
 

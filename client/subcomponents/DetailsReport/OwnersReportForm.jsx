@@ -84,7 +84,6 @@ export default function OwnersReportForm({ address }) {
       navigate(`/thankyou`)
 
       postReport(formattedData)
-      console.log(formattedData)
     },
   })
 
