@@ -9,8 +9,14 @@ function thankyou() {
       <Header />
       <div className="page-width">
         <div className="report-submit-container">
-          <div className="report-submit-header">
-            <h2 className="property-details-text">Report Submission</h2>
+          <div className="thankyou-report-response">
+            <h2>
+              <p>Thank you for your report. It is now pending review. </p>
+              <p>
+                Please take this oppertunity to submit another or just have a
+                look around.
+              </p>
+            </h2>
           </div>
         </div>
       </div>

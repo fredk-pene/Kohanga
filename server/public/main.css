@@ -409,8 +409,14 @@ input:checked + .slider:before {
 
 /*  */
 
-.thankyou {
+.thankyou-report-response {
 
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  font-size: 25px;
+  min-height: 100px;
 }
 
 
@@ -431,3 +437,5 @@ input:checked + .slider:before {
   font-size: 15px;
   z-index: 98;
 } */
+
+
