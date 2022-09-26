@@ -2,10 +2,32 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function getFruits() {
+export function fetchSampleData(id) {
   return request
-    .get(`${rootUrl}/fruits`)
-    .then((res) => res.body.fruits)
+    .get(`${rootUrl}/sampleData/${id}`)
+    .then((res) => res.body)
+    .catch((error) => console.error(error))
+}
+
+export function getAddressSuggestions(string) {
+  return request
+    .get(`${rootUrl}/address`)
+    .query({ search: string })
+    .then((res) => res.body)
+    .catch((error) => console.error(error))
+}
+
+export function getOwnerPropertyInformation(id) {
+  return request
+    .get(`${rootUrl}/reportsubmission/${id}`)
+    .then((res) => res.body)
+    .catch(logError)
+}
+
+export function getRenterPropertyInformation(id) {
+  return request
+    .get(`${rootUrl}/reportsubmission/${id}`)
+    .then((res) => res.body)
     .catch(logError)
 }
 
