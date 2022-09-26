@@ -405,5 +405,4 @@ input:checked + .slider:before {
 
 .report-toggle-switch { 
   display: flex;
-
-
+}
