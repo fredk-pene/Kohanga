@@ -3,10 +3,11 @@ import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
 import { postReport } from '../../api'
 
-export default function RenterReportForm() {
+export default function RenterReportForm({ address }) {
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
+
   const formik = useFormik({
     initialValues: {
       status: '',
@@ -98,6 +99,7 @@ export default function RenterReportForm() {
                 id="address"
                 name="address"
                 type="text"
+                value={address}
                 onChange={formik.handleChange}
               />
             </div>
