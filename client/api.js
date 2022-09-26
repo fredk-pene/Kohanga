@@ -17,6 +17,21 @@ export function fetchSampleData(id) {
     .catch((error) => console.error(error))
 }
 
+export function getPendingReports() {
+  return request
+    .get(`${rootUrl}/reportsubmission/pending`)
+    .then((res) => res.body)
+    .catch((error) => console.error(error))
+}
+
+export function changeReportStatus(status, id) {
+  return request
+    .patch(`${rootUrl}/reportsubmission/${id}`)
+    .send(status, id)
+    .then((res) => res.body)
+    .catch(logError)
+}
+
 export function getAddressSuggestions(string) {
   return request
     .get(`${rootUrl}/address`)

@@ -156,6 +156,12 @@ color: red;
   border-top: 1px solid black;
 }
 
+.approve-buttons-container {
+  border-top: 1px solid black;
+  justify-content: end;
+  display: flex;
+}
+
 .report-title { 
   text-decoration: underline;
 }
@@ -308,9 +314,6 @@ input[type=text], select {
 .challenge-copy { 
   padding-right: 30px;
 }
-
-
-
 
 .footer { 
   width: 100%;
