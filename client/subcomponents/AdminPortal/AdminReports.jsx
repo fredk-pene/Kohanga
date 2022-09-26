@@ -6,15 +6,17 @@ import { changeReportStatus } from '../../api'
 
 import UserImages from '../PropertyDetails/UserImages'
 
-export default function Report({ report }) {
+export default function Report({ report, loadReports }) {
   async function approveReport() {
     const id = report.id
     await changeReportStatus({ id, status: 'Approved' })
+    await loadReports()
   }
 
   async function denyReport() {
     const id = report.id
     await changeReportStatus({ id, status: 'denied' })
+    await loadReports()
   }
 
   return (
