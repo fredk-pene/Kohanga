@@ -11,7 +11,6 @@ export default function BasicPropertyInfo() {
     const addressData = await fetchSampleData(id)
     setSampleData(addressData)
     setLoading(false)
-    console.log(id)
   }, [])
 
   const googleKey = 'AIzaSyD2sKeOJDzdVCq1njl1S0g2YW25GCgkC0w'

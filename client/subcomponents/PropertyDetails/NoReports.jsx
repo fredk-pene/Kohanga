@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function NoReports() {
   return (
     <>
-      <div className="report-container">
+      <div className="no-report-container">
         <div className="report-header">
           <p className="back-to-search-btn">
             Unfortunately theres not been any reports for this property yet.
@@ -19,6 +19,9 @@ export default function NoReports() {
             &nbsp; Back to Search
           </Link>
         </div>
+        <Link to="/submit" className="nav-submit-report-btn">
+          Submit Report
+        </Link>
       </div>
     </>
   )
