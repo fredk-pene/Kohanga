@@ -92,11 +92,8 @@ function editRentersStatus(id, data, db = connection) {
   return db('report').where('id', id).update({ status: approvalStatus })
 }
 
-function getPendingReports(id, db = connection) {
-  return db('report')
-    .select()
-    .where('house_address_id', id)
-    .where('status', 'pending')
+function getPendingReports(db = connection) {
+  return db('report').select().where('status', 'pending')
 }
 
 function approveReports(id, db = connection) {
