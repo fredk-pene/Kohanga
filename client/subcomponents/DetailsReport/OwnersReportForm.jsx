@@ -41,7 +41,7 @@ export default function OwnersReportForm() {
   })
 
   return (
-    <div className="absolute pt-3">
+    <div className="pt-3">
       <form onSubmit={formik.handleSubmit} className="w-full ">
         <div className="flex flex-wrap mx-3 mb-6 border-black border">
           {/* HOUSE DETAILS */}
