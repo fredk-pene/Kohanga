@@ -44,7 +44,7 @@ export default function OwnersReportForm({ address }) {
     },
     onSubmit: async (values) => {
       const formattedData = {
-        address: values.address,
+        address: !values.address ? formattedAddress : values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
         currentRent: values.currentRent,

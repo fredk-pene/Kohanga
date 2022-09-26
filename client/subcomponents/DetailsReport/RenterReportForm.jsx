@@ -45,9 +45,10 @@ export default function RenterReportForm({ address }) {
       rateManager: '',
       rateResponse: '',
     },
+
     onSubmit: async (values) => {
       const formattedData = {
-        address: values.address,
+        address: !values.address ? formattedAddress : values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
         currentRent: values.currentRent,
@@ -86,6 +87,7 @@ export default function RenterReportForm({ address }) {
 
       navigate(`/thankyou`)
       postReport(formattedData)
+      console.log(formattedData)
     },
   })
 
