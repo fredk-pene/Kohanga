@@ -6,25 +6,30 @@ import Sustainaibility from './Sustainability'
 import UserImages from './UserImages'
 
 export default function Report({ report }) {
+  console.log(report)
   return (
     <div className="report-container">
       <div className="report-header">
         <p className="small-title">
-          Latest Rental Report from Landlord ( this is the example )
+          Latest Rental Report from&nbsp;
+          {report.report_submitter[0].toUpperCase() +
+            report.report_submitter.substring(1)}
         </p>
         <div className="report-submission-details">
           <p className="property-details-secondary-text">
             Submitted Report<br></br> {report.date_submitted}
           </p>
           <p className="property-details-secondary-text">
-            Lived at the House<br></br> {report.date_submitted}
+            Started Living at the House<br></br> {report.start_date}
           </p>
           <p className="property-details-secondary-text">
             Occupancy in House<br></br> {report.occupancy} Flatmates
           </p>
-          <p className="property-details-secondary-text">
-            House Rating<br></br> {report.rate_home_health}/5
-          </p>
+          {report.report_submitter != 'Landlord' && (
+            <p className="property-details-secondary-text">
+              House Rating<br></br> {report.rate_home_health}/5
+            </p>
+          )}
         </div>
         <div className="property-details-additional-comments">
           <p className="property-details-secondary-text">

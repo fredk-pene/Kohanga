@@ -17,9 +17,6 @@ export default function RentalInfo({ report }) {
             <p className="report-title">Current Rent</p>
             <p>${report.current_rent}</p>
           </div>
-          <div className="detailed-report-item">
-            <p>Potentially a Rent History Graph</p>
-          </div>
           <div className="detailed-report-container">
             <div className="detailed-report-item">
               <p className="report-title">Bond</p>
@@ -27,20 +24,25 @@ export default function RentalInfo({ report }) {
             </div>
             <div className="detailed-report-item">
               <p className="report-title">Rent in Advance</p>
-              <p>{report.rent_advance}</p>
+              <p>${report.rent_advance}</p>
             </div>
           </div>
-          <p className="report-title">Property Manager</p>
-          <div className="detailed-report-container">
-            <div className="detailed-report-item">
-              <p>Responsiveness</p>
-              <p>{report.rate_property_manager_responsiveness}/5</p>
-            </div>
-            <div className="detailed-report-item">
-              <p className="report-title">Rating</p>
-              <p>{report.ate_property_manager}/5</p>
-            </div>
-          </div>
+
+          {report.report_submitter != 'Landlord' && (
+            <>
+              <p className="report-title">Property Manager</p>
+              <div className="detailed-report-container">
+                <div className="detailed-report-item">
+                  <p>Responsiveness</p>
+                  <p>{report.rate_property_manager_responsiveness}/5</p>
+                </div>
+                <div className="detailed-report-item">
+                  <p className="report-title">Rating</p>
+                  <p>{report.ate_property_manager}/5</p>
+                </div>
+              </div>
+            </>
+          )}
           <div className="detailed-report-item">
             <p>Security System</p>
             {showIcon('security_system')}

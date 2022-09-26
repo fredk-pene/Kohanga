@@ -78,7 +78,6 @@ export default function OwnersReportForm({ address }) {
       }
 
       postReport(formattedData)
-      console.log(formattedData)
     },
   })
 
