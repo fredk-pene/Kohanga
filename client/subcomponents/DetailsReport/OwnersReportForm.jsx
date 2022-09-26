@@ -41,7 +41,7 @@ export default function OwnersReportForm({ address }) {
     },
     onSubmit: async (values) => {
       const formattedData = {
-        address: values.address,
+        address: !values.address ? formattedAddress : values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
         currentRent: values.currentRent,
@@ -307,12 +307,11 @@ export default function OwnersReportForm({ address }) {
               </div>
 
               <div className="w-full md:w-1/1 pl-48 ">
-                
-                  <div className='inset-y-0 right-0'>
-                    <span className='underline flex'>Is there Insulation?</span>
-                  </div>
+                <div className="inset-y-0 right-0">
+                  <span className="underline flex">Is there Insulation?</span>
+                </div>
 
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor=" homeHealthInsulationWall"
@@ -327,7 +326,7 @@ export default function OwnersReportForm({ address }) {
                     Wall
                   </label>
                 </div>
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationCeiling"
@@ -342,7 +341,7 @@ export default function OwnersReportForm({ address }) {
                     Ceiling
                   </label>
                 </div>
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationFloor"
