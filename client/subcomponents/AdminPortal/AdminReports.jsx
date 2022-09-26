@@ -9,7 +9,7 @@ import UserImages from '../PropertyDetails/UserImages'
 export default function Report({ report }) {
   async function approveReport() {
     const id = report.id
-    await changeReportStatus({ id, status: 'approved' })
+    await changeReportStatus({ id, status: 'Approved' })
   }
 
   async function denyReport() {
