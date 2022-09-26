@@ -12,7 +12,8 @@ exports.up = (knex) => {
     table.integer('rent_advance')
     table.integer('start_date')
     table.integer('occupancy')
-    table.integer('pets')
+    table.integer('pets_cats')
+    table.integer('pets_dogs')
     table.string('garden')
     // Healthy homes
     table.integer('home_health_insulation_ceiling')

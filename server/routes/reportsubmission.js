@@ -55,7 +55,8 @@ router.post('/', (req, res) => {
     rentAdvance,
     StartDate,
     occupancy,
-    pets,
+    petsCats,
+    petsDogs,
     garden,
     homeHealthInsulationCeiling,
     homeHealthInsulationFan,
@@ -89,7 +90,8 @@ router.post('/', (req, res) => {
     rentAdvance,
     StartDate,
     occupancy,
-    pets,
+    petsCats,
+    petsDogs,
     garden,
     homeHealthInsulationCeiling,
     homeHealthInsulationFan,
@@ -111,7 +113,6 @@ router.post('/', (req, res) => {
     otherComments,
   }
 
-  console.log(bigData.status)
   createRentersReport(bigData)
     .then(() => {
       res.status(201).json({
