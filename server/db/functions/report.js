@@ -11,7 +11,7 @@ function getRentersReports(id, db = connection) {
   return db('report')
     .select()
     .where('house_address_id', id)
-    .where('status', 'Approved')
+    .where('status', 'approved')
 }
 
 // post report function
