@@ -100,7 +100,7 @@ export default function OwnersReportForm() {
               />
             </div>
             <div className="flex flex-wrap mb-2">
-              <div className="w-full md:w-1/3 px-3 md:mb-0">
+              <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label htmlFor="currentRent">Current Rent</label>
                 <input
                   className="py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
@@ -111,7 +111,10 @@ export default function OwnersReportForm() {
                 />
               </div>
               <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label htmlFor="bond">Bond</label>
+                <label htmlFor="bond">
+                  Bond
+                  <br />
+                </label>
                 <input
                   className="py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
                   id="bond"
@@ -174,7 +177,7 @@ export default function OwnersReportForm() {
               />
             </div>
             {/* YOUR DETAILS */}
-            <div className="border-black border px-3 pt-2">
+            <div className="border-black border-t border-b px-3 pt-2">
               Your Details
               <br></br>
               <div className="mt-2">
@@ -197,7 +200,7 @@ export default function OwnersReportForm() {
           </div>
           <br></br>
           {/* HOUSE HEALTH */}
-          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 border-black border">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 border-black border-l border-b">
             <div className="mb-2">House Health</div>
             <div className="w-full md:w-1/2 mb-3">
               <label htmlFor="energy">What is the heating source?</label>
@@ -307,12 +310,11 @@ export default function OwnersReportForm() {
               </div>
 
               <div className="w-full md:w-1/1 pl-48 ">
-                
-                  <div className='inset-y-0 right-0'>
-                    <span className='underline flex'>Is there Insulation?</span>
-                  </div>
+                <div className="inset-y-0 right-0">
+                  <span className="underline flex">Is there Insulation?</span>
+                </div>
 
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor=" homeHealthInsulationWall"
@@ -327,7 +329,7 @@ export default function OwnersReportForm() {
                     Wall
                   </label>
                 </div>
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationCeiling"
@@ -342,7 +344,7 @@ export default function OwnersReportForm() {
                     Ceiling
                   </label>
                 </div>
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationFloor"
