@@ -337,12 +337,11 @@ export default function RenterReportForm() {
               </div>
 
               <div className="w-full md:w-1/1 pl-48 ">
-                
-                  <div className='inset-y-0 right-0'>
-                    <span className='underline flex'>Is there Insulation?</span>
-                  </div>
+                <div className="inset-y-0 right-0">
+                  <span className="underline flex">Is there Insulation?</span>
+                </div>
 
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor=" homeHealthInsulationWall"
@@ -357,7 +356,7 @@ export default function RenterReportForm() {
                     Wall
                   </label>
                 </div>
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationCeiling"
@@ -372,7 +371,7 @@ export default function RenterReportForm() {
                     Ceiling
                   </label>
                 </div>
-                <div className='w-full md:w-1/6'>
+                <div className="w-full md:w-1/6">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationFloor"
