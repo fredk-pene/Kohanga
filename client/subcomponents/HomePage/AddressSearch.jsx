@@ -54,9 +54,9 @@ export default function addressSearch() {
               onChange={formik.handleChange}
               value={formik.values.address}
             />
-            {suggestions.addresses && (
+            {suggestions?.addresses && (
               <div className="address-suggestions-container">
-                {suggestions.addresses.map((address) => {
+                {suggestions?.addresses.map((address) => {
                   return (
                     <Link
                       to={`/property/${formatAddressToString(
