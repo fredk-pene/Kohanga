@@ -3,10 +3,11 @@ import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
 import { postReport } from '../../api'
 
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function OwnersReportForm({ address }) {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
+
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
@@ -44,7 +45,7 @@ export default function OwnersReportForm({ address }) {
     },
     onSubmit: async (values) => {
       const formattedData = {
-        address: !values.address ? formattedAddress : values.address,
+        address: values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
         currentRent: values.currentRent,
@@ -77,7 +78,7 @@ export default function OwnersReportForm({ address }) {
         heating: values.heating,
         waterTank: checkIfTrue(values.rangeHood),
       }
-      // navigate(`/thankyou`)
+      navigate(`/thankyou`)
 
       postReport(formattedData)
     },
