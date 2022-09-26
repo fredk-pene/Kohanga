@@ -4,6 +4,8 @@ module.exports = {
   getRentersReports,
   createRentersReport,
   editRentersStatus,
+  getPendingReports,
+  approveReports,
 }
 
 function getRentersReports(id, db = connection) {
@@ -12,6 +14,7 @@ function getRentersReports(id, db = connection) {
     .where('house_address_id', id)
     .where('status', 'approved')
 }
+
 // post report function
 function createRentersReport(data, db = connection) {
   const {
@@ -87,4 +90,15 @@ function editRentersStatus(id, data, db = connection) {
   const { approvalStatus } = data
   console.log({ approvalStatus })
   return db('report').where('id', id).update({ status: approvalStatus })
+}
+
+function getPendingReports(id, db = connection) {
+  return db('report')
+    .select()
+    .where('house_address_id', id)
+    .where('status', 'pending')
+}
+
+function approveReports(id, db = connection) {
+  return db('report').where('id', id).update({ status: 'approved' })
 }

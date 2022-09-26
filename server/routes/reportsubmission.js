@@ -5,6 +5,7 @@ const {
   getRentersReports,
   createRentersReport,
   editRentersStatus,
+  getPendingReports,
 } = require('../db/functions/report')
 
 // /get renters form submission
@@ -118,6 +119,22 @@ router.patch('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json('computers says NO!')
   }
+})
+
+// get route for pending reports for admin portal
+router.get('/pending', (req, res) => {
+  getPendingReports()
+    .then((response) => {
+      return res.json(response)
+    })
+    .catch((err) => {
+      console.log(err.message)
+      res.status(500).json({
+        error: {
+          title: 'Unable to retrieve submissions',
+        },
+      })
+    })
 })
 
 module.exports = router

@@ -5,6 +5,8 @@ const reportRoute = require('./routes/reportsubmission')
 const userRoutes = require('./routes/users')
 const addressRoutes = require('./routes/addressRoutes')
 const dataRoutes = require('./routes/sampleDataRoute')
+// const adminRoutes = require('./routes/adminRoutes')
+
 const server = express()
 const request = require('superagent')
 const key = process.env.access_token
@@ -16,6 +18,7 @@ server.use('/api/v1/users', userRoutes)
 server.use('/api/v1/reportsubmission', reportRoute)
 server.use('/api/v1/address', addressRoutes)
 server.use('/api/v1/sampleData', dataRoutes)
+// server.use('/api/v1/admin', adminRoutes)
 
 // server.use('/api/v1/ownersubmissions', ownerSubRoute)
 
