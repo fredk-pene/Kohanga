@@ -5,7 +5,9 @@ export default function Header() {
   return (
     <div className="header-navigation">
       <h1>
-        <Link to="/">Nested</Link>
+        <Link to="/" className="uppercase">
+          kōhanga
+        </Link>
       </h1>
     </div>
   )

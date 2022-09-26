@@ -37,6 +37,7 @@ export default function PropertyDetails() {
             (report, i) => report && <Report report={report} key={i} />
           )
         )}
+
         {renterReports[0] && <Buttons reports={renterReports} />}
       </div>
       <UserNavigation />

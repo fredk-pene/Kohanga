@@ -3,7 +3,7 @@ const express = require('express')
 // const ownerSubRoute = require('./routes/ownerSubmission')
 const reportRoute = require('./routes/reportsubmission')
 const userRoutes = require('./routes/users')
-const addressRoutes = require('./routes/addressRoutes')
+const addressRoutes = require('./routes/addressRoutes.js')
 const dataRoutes = require('./routes/sampleDataRoute')
 const server = express()
 
