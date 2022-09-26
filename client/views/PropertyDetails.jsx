@@ -23,6 +23,8 @@ export default function PropertyDetails() {
     setLoading(false)
   }, [])
 
+  console.log(renterReports)
+
   return (
     <>
       <Header />
