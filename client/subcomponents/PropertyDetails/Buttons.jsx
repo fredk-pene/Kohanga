@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Button({ renterReports }) {
+export default function Button() {
   return (
     <>
       <div className="report-challenge-btn-bar">

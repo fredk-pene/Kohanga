@@ -102,7 +102,7 @@ video {
   background-color: white;
   display: column;
   justify-content: space-between;
-  margin-bottom:60px;
+  margin:60px 0;
 }
 
 
