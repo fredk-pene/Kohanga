@@ -172,14 +172,23 @@ color: red;
   
 }
 
+
+/* HOME PAGE STYLING */
+
+form{
+  justify-content: center;
+}
+
+
 .search-container{
-  position:absolute;
+  position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* text-align: center; */
   border-radius: 50px;
   height: 100%;
   opacity: .7;
@@ -202,14 +211,28 @@ input[type=text], select {
   border-radius: 50px;
   box-sizing: border-box;
   outline: none;
-  padding-inline-end: 20px;
-  padding-inline-start: 20px;
+  /* padding-inline-end: 20px;
+  padding-inline-start: 20px; */
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   z-index: 98;
 }
 
+.address-suggestions-container { 
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  max-width: 800px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px ;
+  /* text-align: left; */
+  /* margin-left: 120px; */
+}
 
 .homeDiscription{
   position: absolute;
@@ -222,23 +245,16 @@ input[type=text], select {
   opacity: 1;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   z-index: 99;
 }
 
-.address-suggestions-container { 
-  background-color: white;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-}
 
 
 /* Footer Styles */
 
 .navigation-bar { 
   width: 100%;
-
   background-color:rgba(168,	168,168, .7);
   display: flex;
   align-items: center;
