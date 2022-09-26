@@ -41,8 +41,6 @@ export default function RenterReportForm() {
     },
     onSubmit: async (values) => {
       const formattedData = {
-        // address: formattedAddress,
-        // houseId: formattedAddress?.replaceAll(',', '').replace(/\s/g, '-'),
         address: values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
@@ -62,8 +60,8 @@ export default function RenterReportForm() {
         doubleGlazed: checkIfTrue(values.doubleGlazed),
         compost: checkIfTrue(values.compost),
         ventilationSystem: checkIfTrue(values.ventilationSystem),
-        homeHealthInsulationFan: checkIfTrue(values.bathroomExtractor),
-        homeHealthRangeHood: checkIfTrue(values.rangeHood),
+        homeHealthInsulationFan: checkIfTrue(values.homeHealthInsulationFan),
+        homeHealthRangeHood: checkIfTrue(values.homeHealthRangeHood),
         rentAdvance: values.rentAdvance,
         ownerStartDate: values.ownerStartDate,
         occupancy: values.occupancy,
@@ -74,7 +72,7 @@ export default function RenterReportForm() {
         noise: values.noise,
         garden: values.garden,
         heating: values.heating,
-        waterTank: checkIfTrue(values.rangeHood),
+        waterTank: checkIfTrue(values.waterTank),
         startDate: values.startDate,
         rateManager: values.rateManager,
         rateResponse: values.rateReponse,
@@ -397,22 +395,25 @@ export default function RenterReportForm() {
 
               {/* Extraction */}
               <div className="w-full md:w-1/1 pl-48 space-x-5">
-                <label className="inline-block" htmlFor="bathroomExtractor">
+                <label
+                  className="inline-block"
+                  htmlFor="homeHealthInsulationFan"
+                >
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="bathroomExtractor"
-                    id="bathroomExtractor"
+                    name="homeHealthInsulationFan"
+                    id="homeHealthInsulationFan"
                     onChange={formik.handleChange}
                   />
                   Bathroom Extractor
                 </label>
-                <label className="inline-block" htmlFor="rangeHood">
+                <label className="inline-block" htmlFor="homeHealthRangeHood">
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
-                    name="rangeHood"
-                    id="rangeHood"
+                    name="homeHealthRangeHood"
+                    id="homeHealthRangeHood"
                     onChange={formik.handleChange}
                   />
                   Kitchen Rangehood
