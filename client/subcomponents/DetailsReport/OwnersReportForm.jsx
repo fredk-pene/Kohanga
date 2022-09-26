@@ -2,9 +2,12 @@ import React from 'react'
 import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
 import { postReport } from '../../api'
+// import { useNavigate } from 'react-router-dom'
 // import { validateAddress } from '../../api'
 
 export default function OwnersReportForm() {
+  // const navigate = useNavigate()
+
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
@@ -75,6 +78,7 @@ export default function OwnersReportForm() {
         heating: values.heating,
         waterTank: checkIfTrue(values.rangeHood),
       }
+      // navigate(`/thankyou`)
 
       postReport(formattedData)
     },

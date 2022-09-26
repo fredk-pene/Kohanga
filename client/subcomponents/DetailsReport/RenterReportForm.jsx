@@ -2,8 +2,11 @@ import React from 'react'
 import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
 import { postReport } from '../../api'
+import { useNavigate } from 'react-router-dom'
 
 export default function RenterReportForm() {
+  const navigate = useNavigate()
+
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
@@ -78,6 +81,7 @@ export default function RenterReportForm() {
         rateResponse: values.rateReponse,
       }
 
+      navigate(`/thankyou`)
       postReport(formattedData)
     },
   })
