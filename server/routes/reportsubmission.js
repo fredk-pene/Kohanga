@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 })
 
 // /post form approval
-router.post('/:id', (req, res) => {
+router.post('/', (req, res) => {
   const id = Number(req.params.id)
   const dateSubmitted = Date.now()
   const {
