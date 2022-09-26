@@ -5,7 +5,6 @@ module.exports = {
   createRentersReport,
   editRentersStatus,
   getPendingReports,
-  approveReports,
 }
 
 function getRentersReports(id, db = connection) {
@@ -94,8 +93,4 @@ function editRentersStatus(id, data, db = connection) {
 
 function getPendingReports(db = connection) {
   return db('report').select().where('status', 'pending')
-}
-
-function approveReports(id, db = connection) {
-  return db('report').where('id', id).update({ status: 'approved' })
 }

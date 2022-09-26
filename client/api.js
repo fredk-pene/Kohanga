@@ -16,6 +16,14 @@ export function getPendingReports() {
     .catch((error) => console.error(error))
 }
 
+export function changeReportStatus(status, id) {
+  return request
+    .patch(`${rootUrl}/reportsubmission/${id}`)
+    .send(status)
+    .then((res) => res.body.status)
+    .catch(logError)
+}
+
 export function getAddressSuggestions(string) {
   return request
     .get(`${rootUrl}/address`)

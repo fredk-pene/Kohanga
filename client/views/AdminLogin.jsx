@@ -3,7 +3,6 @@ import Header from '../subcomponents/Header'
 import NoReports from '../subcomponents/PropertyDetails/NoReports'
 import AdminReports from '../subcomponents/AdminPortal/AdminReports'
 import AdminNavigation from '../subcomponents/AdminNavigation'
-import Buttons from '../subcomponents/PropertyDetails/Buttons'
 import { useParams } from 'react-router-dom'
 import { getPendingReports } from '../api'
 
@@ -22,6 +21,7 @@ export default function PropertyDetails() {
     <>
       <Header />
       <div className="page-width">
+        <p>Admin Portal</p>
         {!reports ? (
           <NoReports />
         ) : loading ? (
@@ -29,7 +29,6 @@ export default function PropertyDetails() {
         ) : (
           reports.map((report, i) => <AdminReports report={report} key={i} />)
         )}
-        <Buttons />
         <AdminNavigation />
       </div>
     </>

@@ -153,6 +153,12 @@ color: red;
   border-top: 1px solid black;
 }
 
+.approve-buttons-container {
+  border-top: 1px solid black;
+  justify-content: end;
+  display: flex;
+}
+
 .report-title { 
   text-decoration: underline;
 }

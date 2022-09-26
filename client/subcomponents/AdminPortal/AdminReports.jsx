@@ -2,15 +2,25 @@ import React from 'react'
 import RentalInfo from '../PropertyDetails/RentalInfo'
 import HomeHealth from '../PropertyDetails/HomeHealth'
 import Sustainaibility from '../PropertyDetails/Sustainability'
+import { changeReportStatus } from '../../api'
 
 import UserImages from '../PropertyDetails/UserImages'
 
 export default function Report({ report }) {
+  // const id = report.id
+  // async function approveReport() {
+  //   await dispatch(changeReportStatus(id, status: 'approved'))
+  // }
+
   return (
     <div className="report-container">
       <div className="report-header">
-        <p className="small-title">
-          Latest Rental Report from Landlord ( this is the example )
+        <p className="small-title">{report.address}</p>
+        <p className="property-details-secondary-text">
+          Email:<br></br> {report.email}
+        </p>
+        <p className="property-details-secondary-text">
+          {report.report_submitter}
         </p>
         <div className="report-submission-details">
           <p className="property-details-secondary-text">
@@ -39,6 +49,15 @@ export default function Report({ report }) {
           <UserImages report={report} />
           <Sustainaibility report={report} />
         </div>
+      </div>
+      <div className="approve-buttons-container">
+        <button onClick={approveReport} className="approve-buttons green">
+          Approve
+        </button>
+        <button onClick={denyReport} className="approve-buttons red">
+          {' '}
+          Deny
+        </button>
       </div>
     </div>
   )
