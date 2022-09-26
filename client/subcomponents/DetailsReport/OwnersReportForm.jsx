@@ -3,7 +3,11 @@ import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
 import { postReport } from '../../api'
 
+import { useNavigate } from 'react-router-dom'
+
 export default function OwnersReportForm({ address }) {
+  const navigate = useNavigate()
+
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
@@ -45,6 +49,7 @@ export default function OwnersReportForm({ address }) {
         houseId: !values.address
           ? formattedAddress.replaceAll(',', '').replace(/\s/g, '-')
           : values.address.replaceAll(',', '').replace(/\s/g, '-'),
+
         status: 'pending',
         currentRent: values.currentRent,
         bond: values.bond,
@@ -76,6 +81,7 @@ export default function OwnersReportForm({ address }) {
         heating: values.heating,
         waterTank: checkIfTrue(values.waterTank),
       }
+      navigate(`/thankyou`)
 
       postReport(formattedData)
       console.log(formattedData)
@@ -103,7 +109,7 @@ export default function OwnersReportForm({ address }) {
               />
             </div>
             <div className="flex flex-wrap mb-2">
-              <div className="w-full md:w-1/3 px-3 md:mb-0">
+              <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label htmlFor="currentRent">Current Rent</label>
                 <input
                   className="py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
@@ -114,7 +120,10 @@ export default function OwnersReportForm({ address }) {
                 />
               </div>
               <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label htmlFor="bond">Bond</label>
+                <label htmlFor="bond">
+                  Bond
+                  <br />
+                </label>
                 <input
                   className="py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
                   id="bond"
@@ -177,7 +186,7 @@ export default function OwnersReportForm({ address }) {
               />
             </div>
             {/* YOUR DETAILS */}
-            <div className="border-black border px-3 pt-2">
+            <div className="border-black border-t border-b px-3 pt-2">
               Your Details
               <br></br>
               <div className="mt-2">
@@ -200,7 +209,7 @@ export default function OwnersReportForm({ address }) {
           </div>
           <br></br>
           {/* HOUSE HEALTH */}
-          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 border-black border">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 border-black border-l border-b">
             <div className="mb-2">House Health</div>
             <div className="w-full md:w-1/2 mb-3">
               <label htmlFor="energy">What is the heating source?</label>

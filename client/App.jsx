@@ -12,6 +12,7 @@ import { getUser } from './api'
 import { useDispatch } from 'react-redux'
 import { clearLoggedInUser, updateLoggedInUser } from './slices/user'
 import ReportSubmit from './views/ReportSubmit'
+import SubmitThankyou from './views/SubmitThanktyou'
 
 function App() {
   useCacheUser()
@@ -45,6 +46,7 @@ function App() {
         <Route path="/submit/" element={<ReportSubmit />} />
         <Route path="/challenge" element={<Challenge />} />
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/thankyou" element={<SubmitThankyou />} />
       </Routes>
     </>
   )
