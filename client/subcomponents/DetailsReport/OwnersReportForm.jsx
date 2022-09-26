@@ -7,15 +7,16 @@ export default function OwnersReportForm() {
     initialValues: {
       address: '',
       currentRent: '',
-      deposit: '',
-      advance: '',
-      datePurchased: '',
+      bond: '',
+      rentAdvance: '',
+      ownerStartDate: '',
       occupancy: '',
-      comments: '',
+      email: '',
+      otherComments: '',
       energy: '',
       noise: '',
       garden: '',
-      heat: '',
+      heating: '',
       toggle: false,
       checked: [],
     },
@@ -25,22 +26,22 @@ export default function OwnersReportForm() {
 
       formData.append('address', values.address)
       formData.append('currentRent', values.currentRent)
-      formData.append('deposit', values.deposit)
-      formData.append('advance', values.advance)
-      formData.append('datePurchased', values.datePurchased)
+      formData.append('bond', values.bond)
+      formData.append('rentAdvance', values.rentAdvance)
+      formData.append('ownerStartDate', values.ownerStartDate)
       formData.append('occupancy', values.occupancy)
-      formData.append('comments', values.comments)
+      formData.append('otherComments', values.otherComments)
       formData.append('energy', values.energy)
       formData.append('noise', values.noise)
       formData.append('garden', values.garden)
-      formData.append('heat', values.heat)
+      formData.append('heating', values.heating)
 
       console.log(formData.append('address', values.address))
     },
   })
 
   return (
-    <div className="absolute">
+    <div className="absolute pt-3">
       <form onSubmit={formik.handleSubmit} className="w-full ">
         <div className="flex flex-wrap mx-3 mb-6 border-black border">
           {/* HOUSE DETAILS */}
@@ -70,11 +71,11 @@ export default function OwnersReportForm() {
                 />
               </div>
               <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label htmlFor="deposit">Deposit</label>
+                <label htmlFor="bond">Bond</label>
                 <input
                   className="py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
-                  id="deposit"
-                  name="deposit"
+                  id="bond"
+                  name="bond"
                   type="text"
                   onChange={formik.handleChange}
                 />
@@ -84,8 +85,8 @@ export default function OwnersReportForm() {
                 <label htmlFor="currentRent">Advance</label>
                 <input
                   className="py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
-                  id="advance"
-                  name="advance"
+                  id="rentAdvance"
+                  name="rentAdvance"
                   type="text"
                   onChange={formik.handleChange}
                 />
@@ -94,13 +95,13 @@ export default function OwnersReportForm() {
 
             <div className="flex flex-wrap mb-2">
               <div className="md:w-1/3 px-2">
-                <label className="flex" htmlFor="datePurchased">
+                <label className="flex" htmlFor="ownerStartDate">
                   When did you purchase the House?
                 </label>
                 <input
                   className="border py-2 px-3 h-6 w-50 rounded-full bg-stone-200 border-black border"
-                  id="datePurchased"
-                  name="datePurchased"
+                  id="ownerStartDate"
+                  name="ownerStartDate"
                   type="text"
                   onChange={formik.handleChange}
                 />
@@ -121,13 +122,13 @@ export default function OwnersReportForm() {
             </div>
 
             <div className="w-full px-3 mb-10">
-              <label className="flex" htmlFor="comments">
-                Any other comments about the house?
+              <label className="flex" htmlFor="otherComments">
+                Any other other comments about the house?
               </label>
               <input
                 className="py-2 px-3 w-60 h-20 rounded-lg bg-stone-200 border-black border"
-                id="comments"
-                name="comments"
+                id="otherComments"
+                name="otherComments"
                 type="text"
                 onChange={formik.handleChange}
               />
@@ -137,7 +138,9 @@ export default function OwnersReportForm() {
               Your Details
               <br></br>
               <div className="mt-2">
-                <label htmlFor="email">what is your email? (incase we need to contact you)</label>
+                <label htmlFor="email">
+                  what is your email? (incase we need to contact you)
+                </label>
                 <input
                   className="py-2 px-3 h-6 w-60 mb-2 border-black border rounded-full bg-stone-200 flex "
                   id="email"
@@ -160,8 +163,8 @@ export default function OwnersReportForm() {
               <label htmlFor="energy">What is the heating source?</label>
               <input
                 className="py-2 px-3 h-6 w-60 border-black border rounded-full bg-stone-200"
-                id="heat"
-                name="heat"
+                id="heating"
+                name="heating"
                 type="text"
                 onChange={formik.handleChange}
               />
@@ -179,38 +182,38 @@ export default function OwnersReportForm() {
             </div>
             <div className="flex flex-wrap mb-3">
               <div className="w-full md:w-1/2">
-                <label className="flex" htmlFor="security">
+                <label className="flex" htmlFor="securitySystem">
                   Does it have a security system?
                 </label>
                 <input
                   type="checkbox"
                   name="toggle"
-                  id="security"
+                  id="securitySystem"
                   onChange={formik.handleChange}
                 />
               </div>
 
               <div className="w-full md:w-1/2">
-                <label className="flex" htmlFor="alarm">
+                <label className="flex" htmlFor="fireAlarms">
                   Is there a fire/smoke alarm?
                 </label>
                 <input
                   type="checkbox"
                   name="toggle"
-                  id="alarm"
+                  id="fireAlarms"
                   onChange={formik.handleChange}
                 />
               </div>
             </div>
             <div className="flex flex-wrap mb-2">
               <div className="w-full md:w-1/2">
-                <label className="flex" htmlFor="windows">
+                <label className="flex" htmlFor="doubleGlazed">
                   Are the windows double glazed?
                 </label>
                 <input
                   type="checkbox"
                   name="toggle"
-                  id="windows"
+                  id="doubleGlazed"
                   onChange={formik.handleChange}
                 />
               </div>
@@ -228,46 +231,59 @@ export default function OwnersReportForm() {
             </div>
             <div className="flex flex-row mb-2">
               <div className="w-full md:w-1/3">
-                <label className="flex" htmlFor="tank">
+                <label className="flex" htmlFor="waterTank">
                   Is there a water tank?
                 </label>
                 <input
                   type="checkbox"
                   name="toggle"
-                  id="tank"
+                  id="waterTank"
                   onChange={formik.handleChange}
                 />
               </div>
 
               <div className="w-full md:w-1/1 pl-48 flex-row space-x-5">
-                <label className="inline-block" htmlFor="wallInsulation">
+                <label
+                  className="inline-block"
+                  htmlFor="    homeHealthInsulationWall,
+"
+                >
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
                     name="toggle"
-                    id="wallInsulation"
+                    id="    homeHealthInsulationWall,
+"
                     onChange={formik.handleChange}
                   />
                   Wall
                 </label>
 
-                <label className="inline-block" htmlFor="ceilingInsulation">
+                <label
+                  className="inline-block"
+                  htmlFor="homeHealthInsulationCeiling"
+                >
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
                     name="toggle"
-                    id="ceilingInsulation"
+                    id="homeHealthInsulationCeiling"
                     onChange={formik.handleChange}
                   />
                   Ceiling
                 </label>
 
-                <label className="inline-block" htmlFor="floorInsulation">
+                <label
+                  className="inline-block"
+                  htmlFor="    homeHealthInsulationFloor,
+"
+                >
                   <input
                     className="ml-2 mr-1 mb-1 flex"
                     type="checkbox"
                     name="toggle"
-                    id="floorInsulation"
+                    id="    homeHealthInsulationFloor,
+"
                     onChange={formik.handleChange}
                   />
                   Floor
@@ -276,11 +292,11 @@ export default function OwnersReportForm() {
             </div>
             <div className="flex pt-2">
               <div className="w-full md:w-1/3 mb-2">
-                <label className="flex" htmlFor="ventilation">
+                <label className="flex" htmlFor="ventilationSystem">
                   <input
                     type="checkbox"
                     name="toggle"
-                    id="ventilation"
+                    id="ventilationSystem"
                     onChange={formik.handleChange}
                   />
                   Is there ventilation?
