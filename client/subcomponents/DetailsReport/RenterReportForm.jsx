@@ -12,7 +12,10 @@ export default function RenterReportForm({ address }) {
 
   const formik = useFormik({
     initialValues: {
+      address: '',
       status: '',
+      currentRent: '',
+      bond: '',
       houseId: '',
       homeHealthInsulationCeiling: [],
       homeHealthInsulationWall: [],
@@ -27,6 +30,8 @@ export default function RenterReportForm({ address }) {
       homeHealthInsulationFan: [],
       homeHealthRangeHood: [],
       rentAdvance: '',
+      StartDate: '',
+      occupancy: '',
       email: '',
       otherComments: '',
       energy: '',
@@ -34,11 +39,6 @@ export default function RenterReportForm({ address }) {
       garden: '',
       heating: '',
       waterTank: '',
-      address: '',
-      currentRent: '',
-      bond: '',
-      StartDate: '',
-      occupancy: '',
       rateManager: '',
       rateResponse: '',
     },
@@ -46,7 +46,9 @@ export default function RenterReportForm({ address }) {
     onSubmit: async (values) => {
       const formattedData = {
         address: !values.address ? formattedAddress : values.address,
-        houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
+        houseId: !values.address
+          ? formattedAddress.replaceAll(',', '').replace(/\s/g, '-')
+          : values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
         currentRent: values.currentRent,
         bond: values.bond,
