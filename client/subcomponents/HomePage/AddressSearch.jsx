@@ -36,7 +36,7 @@ export default function addressSearch() {
   }
 
   function formatAddressToString(address) {
-    return address?.replaceAll(',', '').replace(/\s/g, '-')
+    return address?.replaceAll(',', '').replace(/\s/g, '-').replace('/', '!2F')
   }
 
   return (

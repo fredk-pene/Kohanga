@@ -6,7 +6,7 @@ export default function BasicPropertyInfo({ renterReports }) {
   let [sampleData, setSampleData] = useState({})
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
-  const urlAddress = id.replaceAll('-', ' ')
+  const urlAddress = id.replaceAll('-', ' ').replace('!2F', '/')
   useEffect(async () => {
     setLoading(true)
     const addressData = await fetchSampleData(id)

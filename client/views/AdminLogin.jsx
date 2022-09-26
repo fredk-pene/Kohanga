@@ -3,6 +3,8 @@ import Header from '../subcomponents/Header'
 import NoReports from '../subcomponents/PropertyDetails/NoReports'
 import AdminReports from '../subcomponents/AdminPortal/AdminReports'
 import AdminNavigation from '../subcomponents/AdminNavigation'
+// import { useParams } from 'react-router-dom'
+
 import { getPendingReports } from '../api'
 
 export default function PropertyDetails() {

@@ -2,12 +2,13 @@ import React from 'react'
 import { useFormik } from 'formik'
 import FileUploader from './FileUploader'
 import { postReport } from '../../api'
-// import { validateAddress } from '../../api'
 
-export default function OwnersReportForm() {
+export default function OwnersReportForm({ address }) {
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
+
+  const formattedAddress = address.replaceAll('!2F', '/')
 
   const formik = useFormik({
     initialValues: {
@@ -40,8 +41,6 @@ export default function OwnersReportForm() {
     },
     onSubmit: async (values) => {
       const formattedData = {
-        // address: formattedAddress,
-        // houseId: formattedAddress?.replaceAll(',', '').replace(/\s/g, '-'),
         address: values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
         status: 'pending',
@@ -96,6 +95,7 @@ export default function OwnersReportForm() {
                 id="address"
                 name="address"
                 type="text"
+                value={formattedAddress}
                 onChange={formik.handleChange}
               />
             </div>

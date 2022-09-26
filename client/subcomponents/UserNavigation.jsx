@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function UserNavigation() {
+export default function UserNavigation({ address }) {
   return (
     <>
       <div className="navigation-bar">
@@ -14,7 +14,11 @@ export default function UserNavigation() {
           />
           &nbsp; Back to Search
         </Link>
-        <Link to="/submit" className="nav-submit-report-btn">
+        <Link
+          to="/submit"
+          state={{ address: address }}
+          className="nav-submit-report-btn"
+        >
           Submit Report
         </Link>
       </div>
