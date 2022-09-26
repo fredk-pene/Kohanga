@@ -3,7 +3,6 @@ import Header from '../subcomponents/Header'
 import NoReports from '../subcomponents/PropertyDetails/NoReports'
 import AdminReports from '../subcomponents/AdminPortal/AdminReports'
 import AdminNavigation from '../subcomponents/AdminNavigation'
-import { useParams } from 'react-router-dom'
 import { getPendingReports } from '../api'
 
 export default function PropertyDetails() {
@@ -11,11 +10,15 @@ export default function PropertyDetails() {
   const [loading, setLoading] = useState(false)
 
   useEffect(async () => {
+    await loadReports()
+  }, [])
+
+  async function loadReports() {
     setLoading(true)
     const reports = await getPendingReports()
     setReports(reports)
     setLoading(false)
-  }, [])
+  }
 
   return (
     <>
@@ -27,7 +30,9 @@ export default function PropertyDetails() {
         ) : loading ? (
           <p>loading...</p>
         ) : (
-          reports.map((report, i) => <AdminReports report={report} key={i} />)
+          reports.map((report, i) => (
+            <AdminReports loadReports={loadReports} report={report} key={i} />
+          ))
         )}
         <AdminNavigation />
       </div>
