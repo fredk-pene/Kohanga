@@ -30,7 +30,6 @@ server.get('/address', (req, res) => {
     .get(addressURL)
     .set('authorization', key)
     .then((response) => {
-      console.log(response.body)
       res.json(response.body)
     })
     .catch((err) => console.error(err.message))

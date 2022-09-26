@@ -8,6 +8,8 @@ export default function OwnersReportForm({ address }) {
     return key[0] ? true : false
   }
 
+  const formattedAddress = address.replaceAll('!2F', '/')
+
   const formik = useFormik({
     initialValues: {
       address: '',
@@ -93,7 +95,7 @@ export default function OwnersReportForm({ address }) {
                 id="address"
                 name="address"
                 type="text"
-                value={address}
+                value={formattedAddress}
                 onChange={formik.handleChange}
               />
             </div>
