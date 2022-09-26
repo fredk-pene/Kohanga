@@ -7,10 +7,15 @@ import { changeReportStatus } from '../../api'
 import UserImages from '../PropertyDetails/UserImages'
 
 export default function Report({ report }) {
-  // const id = report.id
-  // async function approveReport() {
-  //   await dispatch(changeReportStatus(id, status: 'approved'))
-  // }
+  async function approveReport() {
+    const id = report.id
+    await changeReportStatus({ id, status: 'approved' })
+  }
+
+  async function denyReport() {
+    const id = report.id
+    await changeReportStatus({ id, status: 'denied' })
+  }
 
   return (
     <div className="report-container">

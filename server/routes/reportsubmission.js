@@ -129,8 +129,8 @@ router.post('/', (req, res) => {
 // patch route for renters submission form
 router.patch('/:id', async (req, res) => {
   try {
-    const updateStatus = req.body
-    const id = req.params.id
+    const updateStatus = req.body.status
+    const id = req.body.id
     const newStatus = await editRentersStatus(id, updateStatus)
     console.log(newStatus)
     res.sendStatus(201) //Approved

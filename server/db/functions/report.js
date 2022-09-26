@@ -87,10 +87,8 @@ function createRentersReport(data, db = connection) {
   })
 }
 
-function editRentersStatus(id, data, db = connection) {
-  const { approvalStatus } = data
-  console.log({ approvalStatus })
-  return db('report').where('id', id).update({ status: approvalStatus })
+function editRentersStatus(id, updateStatus, db = connection) {
+  return db('report').where('id', id).update({ status: updateStatus })
 }
 
 function getPendingReports(db = connection) {

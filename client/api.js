@@ -27,8 +27,8 @@ export function getPendingReports() {
 export function changeReportStatus(status, id) {
   return request
     .patch(`${rootUrl}/reportsubmission/${id}`)
-    .send(status)
-    .then((res) => res.body.status)
+    .send(status, id)
+    .then((res) => res.body)
     .catch(logError)
 }
 
