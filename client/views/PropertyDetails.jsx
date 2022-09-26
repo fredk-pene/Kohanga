@@ -27,8 +27,8 @@ export default function PropertyDetails() {
     <>
       <Header />
       <div className="page-width">
-        <BasicPropertyInfo />
-        {!renterReports ? (
+        <BasicPropertyInfo reports={renterReports} />
+        {!renterReports[0] ? (
           <NoReports />
         ) : loading ? (
           <p>loading...</p>
@@ -37,15 +37,12 @@ export default function PropertyDetails() {
             (report, i) => report && <Report report={report} key={i} />
           )
         )}
-        <Buttons />
-
-        <UserNavigation />
-        {/* Admin Navigation */}
-        <AdminNavigation />
-        <Footer />
-
+        {renterReports[0] && <Buttons reports={renterReports} />}
       </div>
-
+      <UserNavigation />
+      {/* Admin Navigation */}
+      <AdminNavigation />
+      <Footer />
     </>
   )
 }

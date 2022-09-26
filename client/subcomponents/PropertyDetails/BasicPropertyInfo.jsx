@@ -2,17 +2,30 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchSampleData } from '../../api'
 
-export default function BasicPropertyInfo() {
-  const [sampleData, setSampleData] = useState({})
+export default function BasicPropertyInfo({ renterReports }) {
+  let [sampleData, setSampleData] = useState({})
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
+  const urlAddress = id.replaceAll('-', ' ')
   useEffect(async () => {
     setLoading(true)
     const addressData = await fetchSampleData(id)
     setSampleData(addressData)
     setLoading(false)
-    console.log(id)
   }, [])
+
+  if (!renterReports) {
+    sampleData = {
+      address: urlAddress,
+      bedrooms: 4,
+      bathrooms: 2,
+      car_parks: 1,
+      internet: 'Fibre',
+      land_area: 640,
+      floor_area: 120,
+      year_built: '1960s',
+    }
+  }
 
   const googleKey = 'AIzaSyD2sKeOJDzdVCq1njl1S0g2YW25GCgkC0w'
   return (
