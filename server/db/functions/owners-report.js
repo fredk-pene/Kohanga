@@ -8,6 +8,7 @@ function getOwnerReports(id, db = connection) {
     .select()
     .where('id', id)
     .where('status', 'approved')
+    .orderBy('date_submitted')
 }
 
 //  post function for owner report
