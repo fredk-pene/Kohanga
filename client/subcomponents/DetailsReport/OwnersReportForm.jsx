@@ -54,8 +54,8 @@ export default function OwnersReportForm() {
         homeHealthInsulationFloor: checkIfTrue(
           values.homeHealthInsulationFloor
         ),
-        // petsCats: checkIfTrue(values.petsCats),
-        // petsDogs: checkIfTrue(values.petsDogs),
+        petsCats: checkIfTrue(values.petsCats),
+        petsDogs: checkIfTrue(values.petsDogs),
         securitySystem: checkIfTrue(values.securitySystem),
         fireAlarms: checkIfTrue(values.fireAlarms),
         doubleGlazed: checkIfTrue(values.doubleGlazed),
