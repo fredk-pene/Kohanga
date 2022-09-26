@@ -7,7 +7,7 @@ function getOwnerReports(id, db = connection) {
   return db('owners_report')
     .select()
     .where('id', id)
-    .where('status', 'approved')
+    .where('status', 'Approved')
     .orderBy('date_submitted')
 }
 

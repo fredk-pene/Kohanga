@@ -306,48 +306,57 @@ export default function OwnersReportForm() {
                 />
               </div>
 
-              <div className="w-full md:w-1/1 pl-48 flex-row space-x-5">
-                <label
-                  className="inline-block"
-                  htmlFor=" homeHealthInsulationWall"
-                >
-                  <input
-                    className="ml-2 mr-1 mb-1 flex"
-                    type="checkbox"
-                    name="homeHealthInsulationWall"
-                    id="homeHealthInsulationWall"
-                    onChange={formik.handleChange}
-                  />
-                  Wall
-                </label>
+              <div className="w-full md:w-1/1 pl-48 ">
+                
+                  <div className='inset-y-0 right-0'>
+                    <span className='underline flex'>Is there Insulation?</span>
+                  </div>
 
-                <label
-                  className="inline-block"
-                  htmlFor="homeHealthInsulationCeiling"
-                >
-                  <input
-                    className="ml-2 mr-1 mb-1 flex"
-                    type="checkbox"
-                    name="homeHealthInsulationCeiling"
-                    id="homeHealthInsulationCeiling"
-                    onChange={formik.handleChange}
-                  />
-                  Ceiling
-                </label>
-
-                <label
-                  className="inline-block"
-                  htmlFor="homeHealthInsulationFloor"
-                >
-                  <input
-                    className="ml-2 mr-1 mb-1 flex"
-                    type="checkbox"
-                    name="homeHealthInsulationFloor"
-                    id="homeHealthInsulationFloor"
-                    onChange={formik.handleChange}
-                  />
-                  Floor
-                </label>
+                <div className='w-full md:w-1/6'>
+                  <label
+                    className="inline-block"
+                    htmlFor=" homeHealthInsulationWall"
+                  >
+                    <input
+                      className="ml-2 mr-1 mb-1 flex flex"
+                      type="checkbox"
+                      name="homeHealthInsulationWall"
+                      id="homeHealthInsulationWall"
+                      onChange={formik.handleChange}
+                    />
+                    Wall
+                  </label>
+                </div>
+                <div className='w-full md:w-1/6'>
+                  <label
+                    className="inline-block"
+                    htmlFor="homeHealthInsulationCeiling"
+                  >
+                    <input
+                      className="ml-2 mr-1 mb-1 flex"
+                      type="checkbox"
+                      name="homeHealthInsulationCeiling"
+                      id="homeHealthInsulationCeiling"
+                      onChange={formik.handleChange}
+                    />
+                    Ceiling
+                  </label>
+                </div>
+                <div className='w-full md:w-1/6'>
+                  <label
+                    className="inline-block"
+                    htmlFor="homeHealthInsulationFloor"
+                  >
+                    <input
+                      className="ml-2 mr-1 mb-1 flex"
+                      type="checkbox"
+                      name="homeHealthInsulationFloor"
+                      id="homeHealthInsulationFloor"
+                      onChange={formik.handleChange}
+                    />
+                    Floor
+                  </label>
+                </div>
               </div>
             </div>
             <div className="flex pt-2">
@@ -401,7 +410,7 @@ export default function OwnersReportForm() {
               <div className="md:w-1/2 px-2">
                 <label htmlFor="noise">Is there any neighborhood noise?</label>
                 <input
-                  className="py-2 px-3 h-6 w-60 border-black border rounded-full bg-stone-200"
+                  className="py-2 px-3 h-6 w-60 border-black rounded-full bg-stone-200"
                   id="noise"
                   name="noise"
                   type="text"

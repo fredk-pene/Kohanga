@@ -41,8 +41,9 @@ export default function PropertyDetails() {
         {renterReports[0] && <Buttons reports={renterReports} />}
       </div>
       <UserNavigation />
-      {/* Admin Navigation */}
+      {/* Admin Navigation 
       <AdminNavigation />
+          */}
       <Footer />
     </>
   )

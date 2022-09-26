@@ -8,7 +8,6 @@ export default function HomeHealth({ report }) {
       <span className="material-symbols-outlined">close</span>
     )
   }
-  console.log(report)
   return (
     <>
       <div className="full-report-column-container">
