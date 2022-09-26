@@ -23,7 +23,7 @@ exports.up = (knex) => {
     table.integer('home_health_rangehood')
     table.integer('security_system')
     table.string('heating')
-    table.string('ventilation_system')
+    table.integer('ventilation_system')
     table.integer('fire_alarms')
     table.integer('double_glazed')
     table.string('neighborhood_noise')

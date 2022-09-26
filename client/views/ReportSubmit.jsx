@@ -11,7 +11,6 @@ export default function ReportSubmit() {
     setIsLandlord(isChecked)
   }
 
-  console.log(isLandlord)
   return (
     <>
       <Header />

@@ -43,7 +43,7 @@ export default function RenterReportForm() {
       const formattedData = {
         address: values.address,
         houseId: values.address.replaceAll(',', '').replace(/\s/g, '-'),
-        status: 'pending',
+        status: 'Approved',
         currentRent: values.currentRent,
         bond: values.bond,
         homeHealthInsulationCeiling: checkIfTrue(

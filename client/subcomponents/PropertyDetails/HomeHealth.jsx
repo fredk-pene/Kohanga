@@ -8,7 +8,7 @@ export default function HomeHealth({ report }) {
       <span className="material-symbols-outlined">close</span>
     )
   }
-
+  console.log(report)
   return (
     <>
       <div className="full-report-column-container">
@@ -27,7 +27,7 @@ export default function HomeHealth({ report }) {
             </div>
             <div className="detailed-report-item">
               <p>Walls</p>
-              {showIcon('home_health_insulation_walls')}
+              {showIcon('home_health_insulation_wall')}
             </div>
           </div>
           <p className="report-title">Extraction:</p>
@@ -51,7 +51,7 @@ export default function HomeHealth({ report }) {
             {showIcon('double_glazed')}
           </div>
           <div className="detailed-report-item">
-            <p className="report-title">Venitilation</p>
+            <p className="report-title">Ventilation</p>
             {showIcon('ventilation_system')}
           </div>
           <div className="detailed-report-item">
