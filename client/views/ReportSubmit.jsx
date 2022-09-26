@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import OwnersReportForm from '../subcomponents/DetailsReport/OwnersReportForm'
 import RenterReportForm from '../subcomponents/DetailsReport/RenterReportForm'
 import Header from '../subcomponents/Header'
+import { useLocation } from 'react-router-dom'
 
 export default function ReportSubmit() {
   const [isLandlord, setIsLandlord] = useState(false)
+  const location = useLocation()
+  const sourceAddress = location.state.address.replaceAll('-', ' ')
 
   function toggleSubmitter(e) {
     const isChecked = e.target.checked
@@ -38,7 +41,11 @@ export default function ReportSubmit() {
               <p className="property-details-text">Landlord</p>
             </div>
           </div>
-          {isLandlord ? <OwnersReportForm /> : <RenterReportForm />}
+          {isLandlord ? (
+            <OwnersReportForm address={sourceAddress} />
+          ) : (
+            <RenterReportForm address={sourceAddress} />
+          )}
         </div>
       </div>
     </>

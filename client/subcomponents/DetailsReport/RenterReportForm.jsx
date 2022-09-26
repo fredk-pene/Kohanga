@@ -4,12 +4,15 @@ import FileUploader from './FileUploader'
 import { postReport } from '../../api'
 import { useNavigate } from 'react-router-dom'
 
-export default function RenterReportForm() {
+export default function RenterReportForm({ address }) {
   const navigate = useNavigate()
 
   function checkIfTrue(key) {
     return key[0] ? true : false
   }
+
+  const formattedAddress = address.replaceAll('!2F', '/')
+
   const formik = useFormik({
     initialValues: {
       status: '',
@@ -102,6 +105,7 @@ export default function RenterReportForm() {
                 id="address"
                 name="address"
                 type="text"
+                value={formattedAddress}
                 onChange={formik.handleChange}
               />
             </div>

@@ -4,7 +4,7 @@ import BasicPropertyInfo from '../subcomponents/PropertyDetails/BasicPropertyInf
 import NoReports from '../subcomponents/PropertyDetails/NoReports'
 import Report from '../subcomponents/PropertyDetails/Report'
 import UserNavigation from '../subcomponents/UserNavigation'
-import AdminNavigation from '../subcomponents/AdminNavigation'
+// import AdminNavigation from '../subcomponents/AdminNavigation'
 import Buttons from '../subcomponents/PropertyDetails/Buttons'
 import Footer from '../subcomponents/Footer'
 
@@ -29,7 +29,7 @@ export default function PropertyDetails() {
       <div className="page-width">
         <BasicPropertyInfo reports={renterReports} />
         {!renterReports[0] ? (
-          <NoReports />
+          <NoReports address={id} />
         ) : loading ? (
           <p>loading...</p>
         ) : (
@@ -40,7 +40,7 @@ export default function PropertyDetails() {
 
         {renterReports[0] && <Buttons reports={renterReports} />}
       </div>
-      <UserNavigation />
+      <UserNavigation address={id} />
       {/* Admin Navigation 
       <AdminNavigation />
           */}

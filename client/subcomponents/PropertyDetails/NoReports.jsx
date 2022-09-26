@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function NoReports() {
+export default function NoReports({ address }) {
   return (
     <>
       <div className="no-report-container">
@@ -19,7 +19,11 @@ export default function NoReports() {
             &nbsp; Back to Search
           </Link>
         </div>
-        <Link to="/submit" className="nav-submit-report-btn">
+        <Link
+          to="/submit"
+          state={{ address: address }}
+          className="nav-submit-report-btn"
+        >
           Submit Report
         </Link>
       </div>
