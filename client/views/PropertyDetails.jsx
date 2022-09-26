@@ -39,13 +39,11 @@ export default function PropertyDetails() {
         )}
         <Buttons />
 
-        <UserNavigation />
         {/* Admin Navigation */}
-        <AdminNavigation />
-        <Footer />
-
       </div>
-
+      <Footer />
+      <UserNavigation />
+      <AdminNavigation />
     </>
   )
 }
