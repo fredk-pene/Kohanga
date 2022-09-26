@@ -25,15 +25,14 @@ router.get('/:id', (req, res) => {
 })
 
 // /post form approval
-router.post('/:id', (req, res) => {
-  const id = Number(req.params.id)
+router.post('/', (req, res) => {
   const dateSubmitted = Date.now()
   const {
     houseId,
     reportSubmitter,
-    approvalStatus,
-    address,
     email,
+    status,
+    address,
     currentRent,
     bond,
     rentAdvance,
@@ -52,7 +51,7 @@ router.post('/:id', (req, res) => {
     fireAlarms,
     doubleGlazed,
     noise,
-    rateHh,
+    rateH,
     energy,
     waterTank,
     compost,
@@ -60,14 +59,14 @@ router.post('/:id', (req, res) => {
     rateResponse,
     otherComments,
   } = req.body
+
   const bigData = {
-    id,
     houseId,
     dateSubmitted,
     reportSubmitter,
-    approvalStatus,
-    address,
     email,
+    status,
+    address,
     currentRent,
     bond,
     rentAdvance,
@@ -86,7 +85,7 @@ router.post('/:id', (req, res) => {
     fireAlarms,
     doubleGlazed,
     noise,
-    rateHh,
+    rateH,
     energy,
     waterTank,
     compost,
@@ -94,6 +93,8 @@ router.post('/:id', (req, res) => {
     rateResponse,
     otherComments,
   }
+
+  console.log(bigData.status)
   createRentersReport(bigData)
     .then(() => {
       res.status(201).json({
