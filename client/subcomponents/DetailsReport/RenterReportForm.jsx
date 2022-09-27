@@ -184,7 +184,7 @@ export default function RenterReportForm({ address }) {
                 <div>
                   Rate property manager <br></br> responsiveness
                 </div>
-                <select className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+                <select className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
                   <option>⭐</option>
                   <option>⭐⭐</option>
                   <option>⭐⭐⭐</option>
@@ -197,7 +197,7 @@ export default function RenterReportForm({ address }) {
                 <div>
                   Rate property manager <br></br> out of 5
                 </div>
-                <select className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+                <select className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
                   <option>⭐</option>
                   <option>⭐⭐</option>
                   <option>⭐⭐⭐</option>
@@ -496,7 +496,7 @@ export default function RenterReportForm({ address }) {
               <div>Rate the house out of 5</div>
               <select
                 name="rateH"
-                className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+                className="w-32 bg-stone-200 h-9 py-2 px-3 border-black border rounded-lg bg-stone-200 mb-10"
               >
                 <option>🏡</option>
                 <option>🏡🏡</option>
