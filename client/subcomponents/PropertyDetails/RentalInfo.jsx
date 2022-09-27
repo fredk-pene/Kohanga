@@ -37,7 +37,7 @@ export default function RentalInfo({ report }) {
                   <p>{report.rate_property_manager_responsiveness}/5</p>
                 </div>
                 <div className="detailed-report-item">
-                  <p className="report-title">Rating</p>
+                  <p>Rating</p>
                   <p>{report.ate_property_manager}/5</p>
                 </div>
               </div>

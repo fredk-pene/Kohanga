@@ -326,10 +326,10 @@ export default function OwnersReportForm({ address }) {
 
                 <div className="w-full md:w-1/1 pl-48 ">
                   <div className="inset-y-0 right-0">
-                    <span className="underline flex">Is there Insulation?</span>
+                    <span className=" flex">Is there Insulation?</span>
                   </div>
 
-                  <div className="w-full md:w-1/6">
+                  <div className="w-full">
                     <label
                       className="inline-block"
                       htmlFor=" homeHealthInsulationWall"
@@ -344,7 +344,7 @@ export default function OwnersReportForm({ address }) {
                       Wall
                     </label>
                   </div>
-                  <div className="w-full md:w-1/6">
+                  <div className="w-full">
                     <label
                       className="inline-block"
                       htmlFor="homeHealthInsulationCeiling"

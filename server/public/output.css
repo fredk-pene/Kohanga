@@ -655,6 +655,10 @@ video {
   margin-left: 0.75rem;
 }
 
+.ml-0 {
+  margin-left: 0px;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -697,6 +701,10 @@ video {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-wrap {
@@ -820,6 +828,22 @@ video {
 
 .pt-7 {
   padding-top: 1.75rem;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
+}
+
+.pl-24 {
+  padding-left: 6rem;
+}
+
+.pl-36 {
+  padding-left: 9rem;
 }
 
 .text-center {

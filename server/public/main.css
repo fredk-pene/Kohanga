@@ -69,14 +69,14 @@ video {
 
 .details-pair { 
   padding-right:20px;
+  padding-bottom: 10px
 }
 
 .property-details-inside { 
   border: 1px solid black;
-  padding: 20px 0px 0px 20px;
+  padding: 20px 0px 20px 20px;
   display: flex;
   flex-wrap: wrap;
-  height: 200px;
   width: 400px;
 }
 .property-details-left { 
