@@ -14,7 +14,6 @@ function homePage() {
         <div className="logo uppercase">kōhanga</div>
 
         <AddressSearch />
-        {/* <SiteDescription /> */}
 
         {/* <Footer /> */}
       </div>

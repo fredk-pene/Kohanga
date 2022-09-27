@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import * as Yup from 'yup'
 import { getAddressSuggestions } from '../../api'
 
@@ -12,12 +12,15 @@ const searchSchema = Yup.object().shape({
 
 export default function addressSearch() {
   const [suggestions, setSuggestions] = useState('')
-  const { id } = useParams()
   const navigate = useNavigate()
   const formik = useFormik({
     initialValues: {},
     onSubmit: () => {
-      navigate(`/property/${id}`)
+      navigate(
+        `/property/${suggestions.addresses[0].FullAddress.replaceAll(',', '')
+          .replace(/\s/g, '-')
+          .replace('/', '!2F')}`
+      )
     },
     validationSchema: searchSchema,
   })
