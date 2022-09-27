@@ -81,6 +81,7 @@ export default function BasicPropertyInfo({ reports }) {
       <div className="property-details-map">
         <iframe
           title="map"
+          className="map"
           width="600"
           height="450"
           style={{ border: 0 }}
