@@ -695,22 +695,6 @@ video {
   width: 5rem;
 }
 
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-28 {
-  width: 7rem;
-}
-
 .w-32 {
   width: 8rem;
 }
@@ -820,11 +804,6 @@ video {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .pt-2 {
