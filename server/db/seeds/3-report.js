@@ -10,6 +10,8 @@ exports.seed = async function (knex) {
       status: 'Approved',
       address: '393 Wairau Road, Auckland',
       email: 'fredpene@hotmail.co.nz',
+      photo:
+        'https://www.homes4rent.co.nz/photos/677,381/765343-01.jpg?c=1&pcol=cccccc',
       current_rent: '850',
       bond: '',
       rent_advance: '',
@@ -47,6 +49,9 @@ exports.seed = async function (knex) {
       status: 'Approved',
       address: '16/148 Howe Street Freemans Bay, Auckland 1011',
       email: 'karlbayly@gmail.com',
+      photo:
+        'https://images.corelogic.asia/768x512/filters:stretch()/assets/nz/perm/u6evgn7cj4i6vcjdro5xsdauuu?signature=2c4cf6593d39d1268cb9f5920f5ee0dba367be11550e21b37b696c7d40414777',
+
       current_rent: '750',
       bond: '3000',
       rent_advance: '1500',
@@ -82,6 +87,8 @@ exports.seed = async function (knex) {
       status: 'Approved',
       address: '31 Walters Road, Mount Eden, 1024, New Zealand',
       email: 'fergus.haywood5@gmail.com',
+      photo:
+        'https://listings-photos.cloudhi.io/properties/31457/b46c8f12-2130-4bbe-b865-d1d03beb75f9.jpeg/1448x912',
       current_rent: '250',
       bond: '1000',
       rent_advance: '500',
@@ -119,6 +126,8 @@ exports.seed = async function (knex) {
       report_submitter: 'owner',
       address: '52 Nikau Road, Otahuhu',
       email: 'mikeshpatel39@gmail.com',
+      photo:
+        'https://s.oneroof.co.nz/image/94/0f/940fc9a25577b29d3a41e810c905869f.jpg?x-oss-process=image/quality,q_80/resize,w_2400',
       current_rent: '620',
       bond: '0',
       rent_advance: '0',
@@ -151,6 +160,8 @@ exports.seed = async function (knex) {
       report_submitter: 'owner',
       address: '15A Schopolo Place, Albany',
       email: 'mikeshpatel39@gmail.com',
+      photo:
+        'https://s.oneroof.co.nz/image/0c/3b/0c3b4bd205c334a32ad2972ad4b3ad38.jpg?x-oss-process=image/quality,q_80/resize,w_1300',
       current_rent: '400',
       bond: '0',
       rent_advance: '0',
@@ -183,6 +194,8 @@ exports.seed = async function (knex) {
       report_submitter: 'renter',
       address: '15 Range View Road, Mount Albert',
       email: 'sophiaroselawler@gmail.com',
+      photo:
+        'https://rwponsonby.co.nz/media/54329/25563-raywhiteponsonby-15rangeviewroad-01.jpg',
       current_rent: '650',
       bond: '1950',
       rent_advance: '1300',
@@ -220,6 +233,8 @@ exports.seed = async function (knex) {
       report_submitter: 'renter',
       address: '38 Tyrico Close, Unsworth Heights',
       email: 'cmwsmart@gmail.com',
+      photo:
+        'https://images.corelogic.asia/768x512/filters:stretch()/assets/nz/perm/prxgrxwp3ii6pc54upq5c5ef3m?signature=bdf14044bb4036bc27522e79cb1cf8c5211b5408d99a52eddb3805c82024e10a',
       current_rent: '210',
       bond: '420',
       rent_advance: '420',
