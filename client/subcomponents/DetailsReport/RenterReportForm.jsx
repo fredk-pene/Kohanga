@@ -220,7 +220,7 @@ export default function RenterReportForm({ address }) {
               />
             </div>
             {/* YOUR DETAILS */}
-            <div className="border-black border-t border-b ">
+            <div className="border-black border-t">
               <div className=" border-black border-b small-title px-3">
                 Your Details
               </div>
