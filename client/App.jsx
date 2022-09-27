@@ -5,7 +5,6 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 // import Nav from './subcomponents/Nav - good for sign in stuff'
 import Home from './views/Home'
-import Challenge from './views/Challenge'
 import PropertyDetails from './views/PropertyDetails'
 import AdminLogin from './views/AdminLogin'
 import { getUser } from './api'
@@ -44,7 +43,6 @@ function App() {
 
         <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/submit/" element={<ReportSubmit />} />
-        <Route path="/challenge" element={<Challenge />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/thankyou" element={<SubmitThankyou />} />
       </Routes>

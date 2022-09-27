@@ -38,14 +38,15 @@ export default function Header() {
             <br />
             <li>How to Use</li>
             <li>Product News</li>
-            <li>Admin Login</li>
-            <li>Submit Review</li>
-            <li>Challenge Review</li>
+            <li>
+              <Link to="/admin">Admin Login</Link>
+            </li>
+            <li>
+              <Link to="/submit">Submit Review</Link>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-    // </div>
-    // </div>
   )
 }

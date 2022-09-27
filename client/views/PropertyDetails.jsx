@@ -5,7 +5,7 @@ import NoReports from '../subcomponents/PropertyDetails/NoReports'
 import Report from '../subcomponents/PropertyDetails/Report'
 import UserNavigation from '../subcomponents/UserNavigation'
 // import AdminNavigation from '../subcomponents/AdminNavigation'
-import Buttons from '../subcomponents/PropertyDetails/Buttons'
+
 import Footer from '../subcomponents/Footer'
 
 import { useParams } from 'react-router-dom'
@@ -37,8 +37,6 @@ export default function PropertyDetails() {
             (report, i) => report && <Report report={report} key={i} />
           )
         )}
-
-        {renterReports[0] && <Buttons reports={renterReports} />}
       </div>
       <UserNavigation address={id} />
       {/* Admin Navigation 
