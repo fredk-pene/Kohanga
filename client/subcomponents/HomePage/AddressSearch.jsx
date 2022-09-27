@@ -78,8 +78,8 @@ export default function addressSearch() {
         </div>
       </form>
       <p className="homeDiscription">
-        Enter an address to get a comprohensive property report, from renters
-        like you.
+        Enter an address to get a<br></br> comprohensive property report,
+        <br></br> from renters like you.
       </p>
     </>
   )

@@ -95,7 +95,7 @@ export default function RenterReportForm({ address }) {
   return (
     <div className=" pt-3">
       <form onSubmit={formik.handleSubmit} className="w-full ">
-        <div className="flex flex-wrap mx-3 mb-6 border-black border bg-white">
+        <div className="flex flex-wrap border-black border bg-white">
           {/* HOUSE DETAILS */}
           <div className="w-full md:w-1/2">
             <div className="mb-1 px-3 small-title border-black border-b">
@@ -220,7 +220,7 @@ export default function RenterReportForm({ address }) {
               />
             </div>
             {/* YOUR DETAILS */}
-            <div className="border-black border-t border-b ">
+            <div className="border-black border-t">
               <div className=" border-black border-b small-title px-3">
                 Your Details
               </div>
