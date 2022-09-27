@@ -495,3 +495,7 @@ input:checked + .slider:before {
 } */
 
 
+
+.map {
+  filter: grayscale(100%);         
+}

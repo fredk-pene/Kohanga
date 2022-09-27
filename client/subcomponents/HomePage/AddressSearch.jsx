@@ -46,9 +46,9 @@ export default function addressSearch() {
     <>
       <form onSubmit={formik.handleSubmit}>
         <div className="search-container">
-          <div
-            className="searchBar ml-56 -mr-4"
-          >
+
+          <div className="searchBar">
+
             {/* <p>This is the seach bar</p> */}
             {showAnyErrors('address')}
             <input
