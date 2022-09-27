@@ -26,7 +26,15 @@ export default function PropertyDetails() {
     <>
       <Header />
       <div className="page-width">
-        <p>Admin Portal</p>
+        <div className="report-submit-header">
+          <h2 className="property-details-text">Pending Submissions</h2>
+          <p className="report-submit-copy">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industrys standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
         {!reports ? (
           <NoReports />
         ) : loading ? (
@@ -36,8 +44,8 @@ export default function PropertyDetails() {
             <AdminReports loadReports={loadReports} report={report} key={i} />
           ))
         )}
-        <AdminNavigation />
       </div>
+      <AdminNavigation />
     </>
   )
 }

@@ -22,14 +22,15 @@ export default function Report({ report, loadReports }) {
   return (
     <div className="report-container">
       <div className="report-header">
-        <p className="small-title">{report.address}</p>
-        <p className="property-details-secondary-text">
-          Email:<br></br> {report.email}
-        </p>
-        <p className="property-details-secondary-text">
-          {report.report_submitter}
+        <p className="small-title">
+          Report ID: {report.id}&nbsp;&nbsp;&nbsp;&nbsp;Applicant:&nbsp;
+          {report.report_submitter}&nbsp;&nbsp;&nbsp;&nbsp;Status:&nbsp;
+          {report.status}
         </p>
         <div className="report-submission-details">
+          <p className="property-details-secondary-text">
+            Email:<br></br> {report.email}
+          </p>
           <p className="property-details-secondary-text">
             Submitted Report<br></br> {report.date_submitted}
           </p>
@@ -58,10 +59,10 @@ export default function Report({ report, loadReports }) {
         </div>
       </div>
       <div className="approve-buttons-container">
-        <button onClick={approveReport} className="approve-buttons green">
+        <button onClick={approveReport} className="nav-submit-report-btn green">
           Approve
         </button>
-        <button onClick={denyReport} className="approve-buttons red">
+        <button onClick={denyReport} className="nav-submit-report-btn red">
           {' '}
           Deny
         </button>

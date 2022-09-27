@@ -6,7 +6,6 @@ import Sustainaibility from './Sustainability'
 import UserImages from './UserImages'
 
 export default function Report({ report }) {
-  console.log(report)
   return (
     <div className="report-container">
       <div className="report-header">
