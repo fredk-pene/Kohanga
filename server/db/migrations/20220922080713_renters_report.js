@@ -7,6 +7,7 @@ exports.up = (knex) => {
     table.string('status')
     table.string('address')
     table.string('email')
+    table.string('photo')
     table.integer('current_rent')
     table.integer('bond')
     table.integer('rent_advance')

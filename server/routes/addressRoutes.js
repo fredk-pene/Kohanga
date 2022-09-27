@@ -3,7 +3,7 @@ const router = express.Router()
 const request = require('superagent')
 
 const key =
-  'Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IlRFU1QiLCJwaS5hdG0iOiIxIn0.eyJzY29wZSI6W10sImNsaWVudF9pZCI6IjYzZTNjOGI4MjZkNTQ5NDQ5YWY4NzdiYTVjN2UxZjc0IiwiZXhwIjoxNjY0MjQ4NDg0fQ.DBtPQHid_0vBLiLsxtftxZyEln7-0svUQtuqv8xpodU'
+  'Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IlRFU1QiLCJwaS5hdG0iOiIxIn0.eyJzY29wZSI6W10sImNsaWVudF9pZCI6IjYzZTNjOGI4MjZkNTQ5NDQ5YWY4NzdiYTVjN2UxZjc0IiwiZXhwIjoxNjY0MzM2MTA4fQ.X3jaTj45wrz2qh2EqbfAhT6nZ__UgqwApb13jGNUExU'
 // /get request to the external api for address suggesstions
 router.get('/', (req, res) => {
   const string = req.query.search

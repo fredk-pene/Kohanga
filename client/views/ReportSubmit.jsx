@@ -29,7 +29,7 @@ export default function ReportSubmit() {
             </p>
             <p className="small-title">Reporting As:</p>
             <div className="report-toggle-switch">
-              <p className="property-details-text">Tenant</p>
+              <p className="toggle-details-text">Tenant</p>
               <label className="switch">
                 <input
                   name="reporter-toggle"
@@ -38,7 +38,7 @@ export default function ReportSubmit() {
                 />
                 <span className="slider round"></span>
               </label>
-              <p className="property-details-text">Landlord</p>
+              <p className="toggle-details-text">Landlord</p>
             </div>
           </div>
           {isLandlord ? (
