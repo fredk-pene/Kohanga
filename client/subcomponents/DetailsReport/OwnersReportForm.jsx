@@ -396,7 +396,7 @@ export default function OwnersReportForm({ address }) {
                     htmlFor="homeHealthInsulationFan"
                   >
                     <input
-                      className="ml-2 mr-1 mb-1 flex"
+                      className=" mr-1 mb-1 flex"
                       type="checkbox"
                       name="homeHealthInsulationFan"
                       id="homeHealthInsulationFan"
