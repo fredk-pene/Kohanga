@@ -31,66 +31,74 @@ export default function BasicPropertyInfo({ reports }) {
   return loading ? (
     <p>Loading....</p>
   ) : (
-    <div className="property-details-container">
-      <div className="property-details-left">
-        <div className="property-details-header">
-          <p className="small-title">Address:</p>
-          <p className="property-details-text address-header ">
-            {sampleData?.address}
-          </p>
-        </div>
-
-        <div className="property-details-individual">
-          <p className="small-title">Property Details:</p>
-          <div className="property-details-inside">
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Bedrooms</p>
-              <p className="property-details-text">{sampleData?.bedrooms}</p>
-            </div>
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Bathrooms</p>
-              <p className="property-details-text">{sampleData?.bathrooms}</p>
-            </div>
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Car Parks</p>
-              <p className="property-details-text">{sampleData?.car_parks}</p>
-            </div>
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Internet</p>
-              <p className="property-details-text">{sampleData?.internet}</p>
-            </div>
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Land Area</p>
-              <p className="property-details-text">
-                {sampleData?.land_area}m<sup>2</sup>
-              </p>
-            </div>
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Floor Area</p>
-              <p className="property-details-text">
-                {sampleData?.floor_area}m<sup>2</sup>
-              </p>
-            </div>
-            <div className="details-pair">
-              <p className="property-details-secondary-text">Year Built</p>
-              <p className="property-details-text">{sampleData?.year_built} </p>
+    <div>
+      <div className="property-details-container">
+        <div className="property-details-left">
+          <div className="property-details-header">
+            <p className="small-title">Address:</p>
+            <p className="property-details-text address-header ">
+              {sampleData?.address}
+            </p>
+          </div>
+          <div className="property-details-individual">
+            <p className="small-title">Property Details:</p>
+            <div className="property-details-inside">
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Bedrooms</p>
+                <p className="property-details-text">{sampleData?.bedrooms}</p>
+              </div>
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Bathrooms</p>
+                <p className="property-details-text">{sampleData?.bathrooms}</p>
+              </div>
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Car Parks</p>
+                <p className="property-details-text">{sampleData?.car_parks}</p>
+              </div>
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Internet</p>
+                <p className="property-details-text">{sampleData?.internet}</p>
+              </div>
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Land Area</p>
+                <p className="property-details-text">
+                  {sampleData?.land_area}
+                  {sampleData?.land_area != 'N/A' && (
+                    <>
+                      <p>m</p> <sup>2</sup>
+                    </>
+                  )}
+                </p>
+              </div>
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Floor Area</p>
+                <p className="property-details-text">
+                  {sampleData?.floor_area}m<sup>2</sup>
+                </p>
+              </div>
+              <div className="details-pair">
+                <p className="property-details-secondary-text">Year Built</p>
+                <p className="property-details-text">
+                  {sampleData?.year_built}{' '}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="property-details-map">
-        <iframe
-          title="map"
-          className="map"
-          width="600"
-          height="450"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${googleKey}
+        <div className="property-details-map">
+          <iframe
+            title="map"
+            className="map"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${googleKey}
     &q=${sampleData?.address}`}
-        ></iframe>
+          ></iframe>
+        </div>
       </div>
     </div>
   )

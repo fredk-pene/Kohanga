@@ -7,7 +7,13 @@ import { useLocation } from 'react-router-dom'
 export default function ReportSubmit() {
   const [isLandlord, setIsLandlord] = useState(false)
   const location = useLocation()
-  const sourceAddress = location.state.address.replaceAll('-', ' ')
+  let sourceAddress = ''
+
+  if (location.state) {
+    sourceAddress = location.state.address.replaceAll('-', ' ')
+  } else {
+    sourceAddress = ''
+  }
 
   function toggleSubmitter(e) {
     const isChecked = e.target.checked
