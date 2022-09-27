@@ -7,10 +7,10 @@ export default function AdminNavigation() {
       <div className="navigation-bar">
         <p className="back-to-search-btn">Admin Toolbar</p>
         <div className="admin-nav-btn-container">
-          <Link to="/submit" className="nav-submit-report-btn">
+          <Link to="/admin" className="nav-submit-report-btn">
             Admin Portal
           </Link>
-          <Link to="/submit" className="nav-submit-report-btn">
+          <Link to="/" className="nav-submit-report-btn">
             Back to Site
           </Link>
         </div>
