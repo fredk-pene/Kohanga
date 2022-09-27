@@ -81,7 +81,7 @@ export default function OwnersReportForm({ address }) {
         heating: values.heating,
         waterTank: checkIfTrue(values.waterTank),
       }
-      navigate(`/thankyou`)
+      navigate(`/thankyou`, { state: { address: address } })
 
       postReport(formattedData)
     },
