@@ -461,13 +461,17 @@ input:checked + .slider:before {
 /*  */
 
 .thankyou-report-response {
-
   width: 100%;
+  height: 50vh;
   display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
+  flex-direction: column;
+  margin-top: 80px;
   font-size: 25px;
   min-height: 100px;
+}
+
+.back-to-search-btn.thankyou-page{ 
+  margin-top: 80px;
 }
 
 

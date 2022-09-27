@@ -87,7 +87,7 @@ export default function RenterReportForm({ address }) {
         rateResponse: values.rateReponse,
       }
 
-      navigate(`/thankyou`)
+      navigate(`/thankyou`, { state: { address: address } })
       postReport(formattedData)
     },
   })
