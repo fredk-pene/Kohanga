@@ -14,7 +14,6 @@ export default function HomeHealth({ report }) {
         <p className="small-title">Home Health</p>
         <div className="report-column-container property-details-secondary-text">
           <p className="report-title">Insulation:</p>
-          <br />
           <div className="detailed-report-container">
             <div className="detailed-report-item">
               <p>Ceiling</p>
