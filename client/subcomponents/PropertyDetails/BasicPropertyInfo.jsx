@@ -14,7 +14,7 @@ export default function BasicPropertyInfo({ reports }) {
     setLoading(false)
   }, [])
 
-  if (!reports) {
+  if (!reports[0]) {
     sampleData = {
       address: urlAddress,
       bedrooms: 4,
