@@ -262,7 +262,7 @@ export default function RenterReportForm({ address }) {
                   onChange={formik.handleChange}
                 />
               </div>
-              <div className="w-full md:w-1/2 mb-3 space-x-3 ">
+              <div className="w-full md:w-1/2 mb-3">
                 <label className="flex" htmlFor="pets">
                   Are Pets Allowed?
                 </label>
@@ -275,13 +275,11 @@ export default function RenterReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-gray-800 ml-1 mr-3"
                     htmlFor="pets"
                   >
                     Dogs
                   </label>
-                </div>
-                <div className="form-check form-check-inline">
                   <input
                     name="petsCats"
                     type="checkbox"
@@ -290,7 +288,7 @@ export default function RenterReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-gray-800 ml-1"
                     htmlFor="pets"
                   >
                     Cats
@@ -373,7 +371,7 @@ export default function RenterReportForm({ address }) {
                         Wall
                       </label>
                       <input
-                        className="ml-2 mr-1 mb-1 flex flex"
+                        className=" mr-1 mb-1 flex flex"
                         type="checkbox"
                         name="homeHealthInsulationWall"
                         id="homeHealthInsulationWall"
@@ -388,7 +386,7 @@ export default function RenterReportForm({ address }) {
                         Ceiling
                       </label>
                       <input
-                        className="ml-2 mr-1 mb-1 flex"
+                        className=" mr-1 mb-1 flex"
                         type="checkbox"
                         name="homeHealthInsulationCeiling"
                         id="homeHealthInsulationCeiling"
@@ -403,7 +401,7 @@ export default function RenterReportForm({ address }) {
                         Floor
                       </label>
                       <input
-                        className="ml-2 mr-1 mb-1 flex"
+                        className=" mr-1 mb-1 flex"
                         type="checkbox"
                         name="homeHealthInsulationFloor"
                         id="homeHealthInsulationFloor"
@@ -429,7 +427,7 @@ export default function RenterReportForm({ address }) {
                 </div>
 
                 {/* Extraction */}
-                <div className="w-full md:w-1/1 pl-36 space-x-5">
+                <div className="w-full md:w-1/1 pl-36">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationFan"
@@ -437,7 +435,7 @@ export default function RenterReportForm({ address }) {
                     Bathroom Extractor
                   </label>
                   <input
-                    className="ml-2 mr-1 mb-1 flex"
+                    className="mr-1 mb-1 flex"
                     type="checkbox"
                     name="homeHealthInsulationFan"
                     id="homeHealthInsulationFan"
