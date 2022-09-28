@@ -34,169 +34,79 @@ describe('getAllReportsById', () => {
 })
 
 describe('createRentersReport', () => {
-  it('returns the correct number of reports', () => {
-    return db.getRentersReports(1, testDb).then((reports) => {
-      expect(reports).toHaveLength(0)
-      return null
-    })
+  it('creates a new  report in the db', () => {
+    const data = {
+      house_address_id: '393-Wairau-Road-Totara-Vale-Auckland-0629',
+      date_submitted: '',
+      report_submitter: 'renter',
+      status: 'Approved',
+      email: 'fredpene@hotmail.co.nz',
+      current_rent: 850,
+      bond: 1000,
+      rent_advance: 0,
+      start_date: 12062021,
+      occupancy: 5,
+      pets_cats: 0,
+      pets_dogs: 0,
+      home_health_insulation_ceiling: 1,
+      home_health_insulation_floor: 0,
+      home_health_insulation_wall: 1,
+      home_health_extractor_fan: 1,
+      security_system: 0,
+      heating: 'heat pump',
+      ventilation_system: 1,
+      fire_alarms: 1,
+      double_glazed: 0,
+      neighborhood_noise: 'No',
+      rate_home_health: 3,
+      energy_sources: 'LPG, Mains Electric',
+      water_tank: 0,
+      composting_system: 0,
+      rate_property_manager: 4,
+      rate_property_manager_responsiveness: 4,
+      other_comments:
+        'front door has a gap at the bottom causing a bad draught in the winter, downstairs bathroom fan extractor is shit so i use a dehumidifier instead',
+    }
+
+    return db
+      .createRentersReport(data, testDb)
+      .then(([data]) => {
+        return db.getRentersReports(data, testDb)
+      })
+      .then(() => {
+        expect(data.house_address_id).toBe(
+          '393-Wairau-Road-Totara-Vale-Auckland-0629'
+        )
+        expect(data.date_submitted).toBe('')
+        expect(data.report_submitter).toBe('renter')
+        expect(data.status).toBe('Approved')
+        expect(data.email).toBe('fredpene@hotmail.co.nz')
+        expect(data.current_rent).toBe(850)
+        expect(data.bond).toBe(1000)
+        expect(data.rent_advance).toBe(0)
+        expect(data.start_date).toBe(12062021)
+        expect(data.occupancy).toBe(5)
+        expect(data.pets_cats).toBe(0)
+        expect(data.pets_dogs).toBe(0)
+        expect(data.home_health_insulation_ceiling).toBe(1)
+        expect(data.home_health_insulation_floor).toBe(0)
+        expect(data.home_health_insulation_wall).toBe(1)
+        expect(data.security_system).toBe(0)
+        expect(data.heating).toBe('heat pump')
+        expect(data.ventilation_system).toBe(1)
+        expect(data.fire_alarms).toBe(1)
+        expect(data.double_glazed).toBe(0)
+        expect(data.neighborhood_noise).toBe('No')
+        expect(data.rate_home_health).toBe(3)
+        expect(data.energy_sources).toBe('LPG, Mains Electric')
+        expect(data.water_tank).toBe(0)
+        expect(data.composting_system).toBe(0)
+        expect(data.rate_property_manager).toBe(4)
+        expect(data.rate_property_manager_responsiveness).toBe(4)
+        expect(data.other_comments).toBe(
+          'front door has a gap at the bottom causing a bad draught in the winter, downstairs bathroom fan extractor is shit so i use a dehumidifier instead'
+        )
+        return null
+      })
   })
 })
-// describe('createReportById', () => {
-//   it('return a report related to the id', () => {
-//     return db.createRentersReport(1, testDb).then((report) => {
-//       expect(report).toHaveLength(1)
-//       expect(report[1]).toMatch(1)
-//       return null
-//     })
-//   })
-// })
-
-// describe('addNews', () => {
-//   it('adds the new news to the db', () => {
-//     const bidData = {
-//       house_address_id: '',
-//       date_submitted: '',
-//       status: '',
-//       report_submitter: '',
-//       address: '',
-//       email: '',
-//       current_rent: '',
-//       bond: '',
-//       rent_advance: '',
-//       start_date: '',
-//       occupancy: '',
-//       pets_cats: '',
-//       pets_dogs: '',
-//       garden: '',
-//       home_health_insulation_ceiling: '',
-//       home_health_insulation_floor: '',
-//       home_health_insulation_wall: '',
-//       home_health_extractor_fan: '',
-//       home_health_rangehood: '',
-//       security_system: '',
-//       heating: '',
-//       ventilation_system: '',
-//       fire_alarms: '',
-//       double_glazed: '',
-//       neighborhood_noise: '',
-//       rate_home_health: '',
-//       energy_sources: '',
-//       water_tank: '',
-//       composting_system: '',
-//       rate_property_manager: '',
-//       rate_property_manager_responsiveness: '',
-//       other_comments: '',
-//     }
-//     return db.createRentersReport(id, testDb).then(([id]) => {})
-//   }).then((report) => {
-//     expect(report.house_address_id).toBe(1)
-//     expect(report.date_submitted).toBe(0)
-//     expect(report.status).toBe(1)
-//     expect(report.report_submitter).toMatch('Testing the tests')
-//     return null
-//   })
-// })
-
-// test('get all the data', () => {
-//   return getRentersReports(testDb).then((tasks) => {
-//     console.log(tasks)
-
-//     expect(tasks).toBe('Approved')
-//   })
-// })
-
-// describe('createsreport', () => {
-//   it('creates a new report in db', () => {
-//     const bidData = {
-//       house_address_id: '',
-//       date_submitted: '',
-//       status: '',
-//       report_submitter: '',
-//       address: '',
-//       email: '',
-//       current_rent: '',
-//       bond: '',
-//       rent_advance: '',
-//       start_date: '',
-//       occupancy: '',
-//       pets_cats: '',
-//       pets_dogs: '',
-//       garden: '',
-//       home_health_insulation_ceiling: '',
-//       home_health_insulation_floor: '',
-//       home_health_insulation_wall: '',
-//       home_health_extractor_fan: '',
-//       home_health_rangehood: '',
-//       security_system: '',
-//       heating: '',
-//       ventilation_system: '',
-//       fire_alarms: '',
-//       double_glazed: '',
-//       neighborhood_noise: '',
-//       rate_home_health: '',
-//       energy_sources: '',
-//       water_tank: '',
-//       composting_system: '',
-//       rate_property_manager: '',
-//       rate_property_manager_responsiveness: '',
-//       other_comments: '',
-//     }
-
-//     return bidDatas
-//       .createRentersReport(bidData, testDb)
-//       .then((ids) => bidDatas.createRentersReport(ids[0], testDb))
-//       .then((report) => {
-//         expect(report.id).not.toBeNull()
-//         expect(report.house_address_id).toBe(
-//           '393-Wairau-Road-Totara-Vale-Auckland-0629'
-//         )
-//         expect(report.date_submitted).toBe(22092022)
-//         expect(report.report_submitter).toBe('renter')
-//         expect(report.status).toBe('Approved')
-//         expect(report.email).toBe('fredpene@hotmail.co.nz')
-//         expect(report.current_rent).toBe(850)
-//         expect(report.bond).toBeNull()
-//         expect(report.rent_advance).toBeNull()
-//         expect(report.start_date).toBe(12062021)
-//         expect(report.occupancy).toBe(5)
-//         expect(report.pets_cats).toBe(0)
-//         expect(report.pets_dogs).toBe(0)
-//         expect(report.home_health_insulation_ceiling).toBe(1)
-//         expect(report.home_health_insulation_floor).toBeNull()
-//         expect(report.home_health_insulation_wall).toBe(1)
-//         expect(report.home_health_rangehood).toBe(1)
-//         expect(report.security_system).toBe(0)
-//         expect(report.heating).toBe('{heat pump}')
-//         expect(report.ventilation_system).toBe(1)
-//         expect(report.fire_alarms).toBe(1)
-//         expect(report.double_glazed).toBe(0)
-//         expect(report.neighborhood_noise).toBe('No')
-//         expect(report.rate_home_health).toBe(3)
-//         expect(report.energy_sources).toBe('LPG, Mains Electric')
-//         expect(report.water_tank).toBe(0)
-//         expect(report.composting_system).toBe(0)
-//         expect(report.rate_property_manager).toBe(4)
-//         expect(report.rate_property_manager_responsiveness).toBe(4)
-//         expect(report.other_comments).toBe(
-//           'front door has a gap at the bottom causing a bad draught in the winter, downstairs bathroom fan extractor is shit so i use a dehumidifier instead'
-//         )
-
-//         return null
-//       })
-//   })
-// })
-
-// test('addTodo adds a new task to the database', () => {
-//   // Add a task to TODO table
-//   const todoTask = 'Do a cartwheel'
-//   return addTodo(todoTask, testDb)
-//     .then((returned) => {
-//       console.log(returned)
-//       expect(returned[0]).toEqual(4)
-
-//       return getAll(testDb)
-//     })
-//     .then((tasks) => {
-//       // Check the last row / data is the one we added
-//       expect(tasks[3].task).toMatch(todoTask)
-//     })
