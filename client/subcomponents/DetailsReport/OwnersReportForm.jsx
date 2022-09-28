@@ -91,7 +91,6 @@ export default function OwnersReportForm({ address }) {
     <div className="pt-3">
       <form onSubmit={formik.handleSubmit} className="w-full ">
         <div className="flex flex-wrap border-black border bg-white ">
-          {/* HOUSE DETAILS */}
           <div className="w-full md:w-1/2">
             <div className="mb-1 px-3 small-title border-b border-black ">
               House Details
@@ -186,7 +185,6 @@ export default function OwnersReportForm({ address }) {
                 onChange={formik.handleChange}
               />
             </div>
-            {/* YOUR DETAILS */}
             <div className="border-black border-t border-b small-title border-b-1 border-black ">
               <div className="mb-1 px-3 small-title border-b border-black ">
                 Your Details
@@ -211,7 +209,6 @@ export default function OwnersReportForm({ address }) {
             </div>
           </div>
           <br></br>
-          {/* HOUSE HEALTH */}
           <div className="w-full md:w-1/2  mb-6 md:mb-0 border-black border-l ">
             <div className="mb-2 small-title border-b border-black px-3">
               House Health
@@ -388,7 +385,6 @@ export default function OwnersReportForm({ address }) {
                   ></input>
                 </div>
 
-                {/* Extraction */}
                 <div className="w-full md:w-1/2">
                   <label
                     className="inline-block"
@@ -449,7 +445,6 @@ export default function OwnersReportForm({ address }) {
                   onChange={formik.handleChange}
                 />
               </div>
-              {/* HOUSE RATING */}
               <div>Rate the house out of 5</div>
               <select
                 name="rateH"
