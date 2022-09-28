@@ -36,13 +36,18 @@ export default function Header() {
           <ul>
             <li>Resources</li>
             <br />
-            <li>How to Use</li>
-            <li>Product News</li>
+            <li>
+              <Link to="/howtouse">How to Use</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+
             <li>
               <Link to="/admin">Admin Login</Link>
             </li>
             <li>
-              <Link to="/submit">Submit Review</Link>
+              <Link to="/">Submit Review</Link>
             </li>
           </ul>
         </div>

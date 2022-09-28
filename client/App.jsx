@@ -12,6 +12,8 @@ import { useDispatch } from 'react-redux'
 import { clearLoggedInUser, updateLoggedInUser } from './slices/user'
 import ReportSubmit from './views/ReportSubmit'
 import SubmitThankyou from './views/SubmitThanktyou'
+import HowToUse from './views/HowToUse'
+import About from './views/About'
 
 function App() {
   useCacheUser()
@@ -45,6 +47,8 @@ function App() {
         <Route path="/submit/" element={<ReportSubmit />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/thankyou" element={<SubmitThankyou />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/howtouse" element={<HowToUse />} />
       </Routes>
     </>
   )
