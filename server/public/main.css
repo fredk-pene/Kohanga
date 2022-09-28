@@ -464,7 +464,16 @@ input:checked + .slider:before {
   margin-bottom: 50px;
 }
 
-/*  */
+
+
+
+input[type=checkbox] {
+  width: 25px; 
+  height:25px; 
+  border-radius: 15px;
+  accent-color: #000;    
+
+}
 
 .thankyou-report-response {
   width: 100%;
