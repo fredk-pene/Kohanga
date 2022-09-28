@@ -460,6 +460,7 @@ input:checked + .slider:before {
 }
 
 .report-submit-copy { 
+  padding-top: 10px;
   margin-bottom: 50px;
 }
 

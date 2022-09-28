@@ -239,7 +239,7 @@ export default function RenterReportForm({ address }) {
               <div className="px-3">
                 <div className="mt-2">
                   <label htmlFor="email">
-                    what is your email? (incase we need to contact you)
+                    What is your email? (incase we need to contact you)
                   </label>
                   <input
                     className="py-2 px-3 h-6 w-60 mb-2 border-black border rounded-full bg-stone-200 flex "

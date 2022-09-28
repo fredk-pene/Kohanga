@@ -639,6 +639,14 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -653,14 +661,6 @@ video {
 
 .ml-3 {
   margin-left: 0.75rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
-}
-
-.mr-3 {
-  margin-right: 0.75rem;
 }
 
 .ml-0 {
@@ -721,12 +721,6 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
