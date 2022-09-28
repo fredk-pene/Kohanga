@@ -227,7 +227,7 @@ export default function OwnersReportForm({ address }) {
                   onChange={formik.handleChange}
                 />
               </div>
-              <div className="w-full md:w-1/2 mb-3 space-x-3 ">
+              <div className="w-full md:w-1/2 mb-3 ">
                 <label className="flex" htmlFor="pets">
                   Are Pets Allowed?
                 </label>
@@ -240,7 +240,7 @@ export default function OwnersReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-gray-800 ml-1 mr-3"
                     htmlFor="pets"
                   >
                     Dogs
@@ -253,7 +253,7 @@ export default function OwnersReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-gray-800 ml-1 mr-3"
                     htmlFor="pets"
                   >
                     Cats
@@ -376,15 +376,16 @@ export default function OwnersReportForm({ address }) {
               </div>
               <div className="flex pt-2">
                 <div className="w-full md:w-1/2 mb-2">
-                  <label className="flex" htmlFor="ventilationSystem">
-                    <input
-                      type="checkbox"
-                      name="ventilationSystem"
-                      id="ventilationSystem"
-                      onChange={formik.handleChange}
-                    />
-                    Is there ventilation?
-                  </label>
+                  <div className="inset-y-0 right-0">
+                    <label htmlFor="ventilationSystem">
+                      Is there ventilation?
+                    </label>
+                  </div>
+                  <input
+                    type="checkbox"
+                    name="ventilationSystem"
+                    id="ventilationSystem"
+                  ></input>
                 </div>
 
                 {/* Extraction */}
