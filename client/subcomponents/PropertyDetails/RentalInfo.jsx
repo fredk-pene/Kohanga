@@ -34,11 +34,11 @@ export default function RentalInfo({ report }) {
               <div className="detailed-report-container">
                 <div className="detailed-report-item">
                   <p>Responsiveness</p>
-                  <p>{report.rate_property_manager_responsiveness}/5</p>
+                  <p>{report.rate_property_manager_responsiveness}</p>
                 </div>
                 <div className="detailed-report-item">
                   <p>Rating</p>
-                  <p>{report.ate_property_manager}/5</p>
+                  <p>{report.ate_property_manager}</p>
                 </div>
               </div>
             </>

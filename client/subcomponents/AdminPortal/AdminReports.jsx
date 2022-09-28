@@ -41,10 +41,14 @@ export default function Report({ report, loadReports }) {
             Occupancy in House<br></br> {report.occupancy} Flatmates
           </p>
           <p className="property-details-secondary-text">
-            House Rating<br></br> {report.rate_home_health}/5
+            House Rating<br></br> {report.rate_home_health}{' '}
           </p>
         </div>
         <div className="property-details-additional-comments">
+          <p className="property-details-secondary-text">
+            Address:<br></br> {report.address}
+          </p>
+
           <p className="property-details-secondary-text">
             Additional Comments:<br></br> {report.other_comments}
           </p>
