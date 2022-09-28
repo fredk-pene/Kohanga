@@ -3,6 +3,7 @@ import OwnersReportForm from '../subcomponents/DetailsReport/OwnersReportForm'
 import RenterReportForm from '../subcomponents/DetailsReport/RenterReportForm'
 import Header from '../subcomponents/Header'
 import { useLocation } from 'react-router-dom'
+import Footer from '../subcomponents/Footer'
 
 export default function ReportSubmit() {
   const [isLandlord, setIsLandlord] = useState(false)
@@ -55,6 +56,8 @@ export default function ReportSubmit() {
           )}
         </div>
       </div>
+      <Footer />
+
     </>
   )
 }

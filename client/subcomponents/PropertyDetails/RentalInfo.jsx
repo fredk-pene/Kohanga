@@ -38,7 +38,7 @@ export default function RentalInfo({ report }) {
                 </div>
                 <div className="detailed-report-item">
                   <p>Rating</p>
-                  <p>{report.ate_property_manager}</p>
+                  <p>{report.rate_property_manager}</p>
                 </div>
               </div>
             </>
