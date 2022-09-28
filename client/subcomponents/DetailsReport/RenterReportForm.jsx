@@ -33,7 +33,7 @@ export default function RenterReportForm({ address }) {
       homeHealthInsulationFan: [],
       homeHealthRangeHood: [],
       rentAdvance: '',
-      StartDate: '',
+      startDate: '',
       occupancy: '',
       email: '',
       otherComments: '',
@@ -44,6 +44,7 @@ export default function RenterReportForm({ address }) {
       waterTank: '',
       rateManager: '',
       rateResponse: '',
+      rateH: '',
     },
 
     onSubmit: async (values) => {
@@ -84,8 +85,10 @@ export default function RenterReportForm({ address }) {
         waterTank: checkIfTrue(values.waterTank),
         startDate: values.startDate,
         rateManager: values.rateManager,
-        rateResponse: values.rateReponse,
+        rateResponse: values.rateResponse,
+        rateH: values.rateH,
       }
+      console.log(values)
 
       navigate(`/thankyou`, { state: { address: address } })
       postReport(formattedData)
@@ -184,7 +187,11 @@ export default function RenterReportForm({ address }) {
                 <div>
                   Rate property manager <br></br> responsiveness
                 </div>
-                <select className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+                <select
+                  className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+                  onChange={formik.handleChange}
+                  name="rateManager"
+                >
                   <option>⭐</option>
                   <option>⭐⭐</option>
                   <option>⭐⭐⭐</option>
@@ -197,7 +204,11 @@ export default function RenterReportForm({ address }) {
                 <div>
                   Rate property manager <br></br> out of 5
                 </div>
-                <select className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+                <select
+                  className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+                  onChange={formik.handleChange}
+                  name="rateResponse"
+                >
                   <option>⭐</option>
                   <option>⭐⭐</option>
                   <option>⭐⭐⭐</option>
@@ -495,6 +506,7 @@ export default function RenterReportForm({ address }) {
               <select
                 name="rateH"
                 className="w-32 bg-stone-200 h-9 py-2 px-3 border-black border rounded-lg bg-stone-200 mb-10"
+                onChange={formik.handleChange}
               >
                 <option>🏡</option>
                 <option>🏡🏡</option>
