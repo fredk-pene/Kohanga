@@ -4,7 +4,6 @@ import HomeHealth from '../PropertyDetails/HomeHealth'
 import Sustainaibility from '../PropertyDetails/Sustainability'
 import { changeReportStatus } from '../../api'
 import moment from 'moment'
-
 import UserImages from '../PropertyDetails/UserImages'
 
 export default function Report({ report, loadReports }) {

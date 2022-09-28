@@ -65,7 +65,7 @@ export default function BasicPropertyInfo({ reports }) {
                   {sampleData?.land_area}
                   {sampleData?.land_area != 'N/A' && (
                     <>
-                      <p>m</p> <sup>2</sup>
+                      <p style={{ display: 'inline-block' }}>m</p> <sup>2</sup>
                     </>
                   )}
                 </p>
