@@ -3,6 +3,7 @@ import RentalInfo from '../PropertyDetails/RentalInfo'
 import HomeHealth from '../PropertyDetails/HomeHealth'
 import Sustainaibility from '../PropertyDetails/Sustainability'
 import { changeReportStatus } from '../../api'
+import moment from 'moment'
 
 import UserImages from '../PropertyDetails/UserImages'
 
@@ -36,10 +37,12 @@ export default function Report({ report, loadReports }) {
             Email:<br></br> {report.email}
           </p>
           <p className="property-details-secondary-text">
-            Submitted Report<br></br> {report.date_submitted}
+            Submitted Report<br></br>{' '}
+            {moment(report.date_submitted, 'DDMMYYYY').format('MMM Do, YYYY')}
           </p>
           <p className="property-details-secondary-text">
-            Lived at the House<br></br> {report.date_submitted}
+            Lived at the House<br></br>{' '}
+            {moment(report.start_date, 'DDMYYYY').format('MMM Do, YYYY')}
           </p>
           <p className="property-details-secondary-text">
             Occupancy in House<br></br> {report.occupancy} Flatmates

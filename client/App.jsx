@@ -14,6 +14,7 @@ import ReportSubmit from './views/ReportSubmit'
 import SubmitThankyou from './views/SubmitThanktyou'
 import HowToUse from './views/HowToUse'
 import About from './views/About'
+import Challenge from './views/Challenge'
 
 function App() {
   useCacheUser()
@@ -48,6 +49,7 @@ function App() {
         <Route path="/thankyou" element={<SubmitThankyou />} />
         <Route path="/about" element={<About />} />
         <Route path="/howtouse" element={<HowToUse />} />
+        <Route path="/challenge" element={<Challenge />} />
       </Routes>
     </>
   )

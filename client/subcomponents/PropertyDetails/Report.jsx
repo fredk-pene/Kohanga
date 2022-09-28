@@ -2,6 +2,7 @@ import React from 'react'
 import RentalInfo from './RentalInfo'
 import HomeHealth from './HomeHealth'
 import Sustainaibility from './Sustainability'
+import moment from 'moment'
 
 import UserImages from './UserImages'
 
@@ -16,10 +17,12 @@ export default function Report({ report }) {
         </p>
         <div className="report-submission-details">
           <p className="property-details-secondary-text">
-            Submitted Report<br></br> {report.date_submitted}
+            Submitted Report<br></br>{' '}
+            {moment(report.date_submitted, 'DDMMYYYY').format('MMM Do, YYYY')}
           </p>
           <p className="property-details-secondary-text">
-            Started Living at the House<br></br> {report.start_date}
+            Started Living at the House<br></br>{' '}
+            {moment(report.start_date, 'DDMMYYYY').format('MMM Do, YYYY')}
           </p>
           <p className="property-details-secondary-text">
             Occupancy in House<br></br> {report.occupancy} Flatmates

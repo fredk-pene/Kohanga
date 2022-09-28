@@ -4,7 +4,7 @@ import FileUploader from './FileUploader'
 import { postReport } from '../../api'
 import { useNavigate } from 'react-router-dom'
 
-export default function RenterReportForm({ address }) {
+export default function RenterChallengeForm({ address }) {
   const navigate = useNavigate()
 
   function checkIfTrue(key) {
