@@ -148,9 +148,9 @@ video {
 }
 
 .property-details-additional-comments { 
-  width: 500px;
+  width: 700px;
   margin-top: 30px;
-
+  display: flex;
 }
 
 .report-header { 

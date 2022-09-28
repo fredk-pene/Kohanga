@@ -310,7 +310,7 @@ export default function OwnersReportForm({ address }) {
                 </div>
               </div>
               <div className="flex flex-row mb-2">
-                <div className="w-full md:w-1/3">
+                <div className="w-full md:w-1/2">
                   <label className="flex" htmlFor="waterTank">
                     Is there a water tank?
                   </label>
@@ -322,7 +322,7 @@ export default function OwnersReportForm({ address }) {
                   />
                 </div>
 
-                <div className="w-full md:w-1/1 pl-36 ">
+                <div className="w-full md:w-1/2 ">
                   <div className="inset-y-0 right-0">
                     <span className=" flex">Is there Insulation?</span>
                   </div>
@@ -375,7 +375,7 @@ export default function OwnersReportForm({ address }) {
                 </div>
               </div>
               <div className="flex pt-2">
-                <div className="w-full md:w-1/3 mb-2">
+                <div className="w-full md:w-1/2 mb-2">
                   <label className="flex" htmlFor="ventilationSystem">
                     <input
                       type="checkbox"
@@ -388,7 +388,7 @@ export default function OwnersReportForm({ address }) {
                 </div>
 
                 {/* Extraction */}
-                <div className="w-full md:w-1/1 pl-36">
+                <div className="w-full md:w-1/2">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationFan"
@@ -415,7 +415,7 @@ export default function OwnersReportForm({ address }) {
                 </div>
               </div>
               <div className="flex flex-wrap mb-3 pt-2">
-                <div className="md:w-1/3">
+                <div className="md:w-1/2">
                   <label htmlFor="energy">Energy Sources</label>
                   <input
                     className="py-2 px-3 h-6 w-60 border-black border rounded-full bg-stone-200"
@@ -425,7 +425,7 @@ export default function OwnersReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                 </div>
-                <div className="md:w-1/2 px-2">
+                <div className="md:w-1/2 pr-2">
                   <label htmlFor="noise">
                     Is there any neighborhood noise?
                   </label>
