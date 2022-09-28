@@ -26,7 +26,7 @@ export default function Report({ report }) {
           </p>
           {report.report_submitter != 'Landlord' && (
             <p className="property-details-secondary-text">
-              House Rating<br></br> {report.rate_home_health}/5
+              House Rating<br></br> {report.rate_home_health}
             </p>
           )}
         </div>

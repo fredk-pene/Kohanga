@@ -69,14 +69,14 @@ video {
 
 .details-pair { 
   padding-right:20px;
+  padding-bottom: 10px
 }
 
 .property-details-inside { 
   border: 1px solid black;
-  padding: 20px 0px 0px 20px;
+  padding: 20px 0px 20px 20px;
   display: flex;
   flex-wrap: wrap;
-  height: 200px;
   width: 400px;
 }
 .property-details-left { 
@@ -148,9 +148,9 @@ video {
 }
 
 .property-details-additional-comments { 
-  width: 500px;
+  width: 700px;
   margin-top: 30px;
-
+  display: flex;
 }
 
 .report-header { 
@@ -170,7 +170,7 @@ video {
 
 .report-column-container .report-title { 
   padding-bottom: 15px;
-  padding-top: 15px;
+
 }
 
 .report-column-container { 
@@ -197,6 +197,10 @@ padding: 30px 0px 20px 15px;
 .detailed-report-container .detailed-report-item { 
   padding-right: 30px;
   padding-bottom: 20px;
+}
+
+.detailed-report-item { 
+  padding-top: 15px;
 }
 
 .report-end-column { 

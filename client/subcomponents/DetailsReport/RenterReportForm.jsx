@@ -33,7 +33,7 @@ export default function RenterReportForm({ address }) {
       homeHealthInsulationFan: [],
       homeHealthRangeHood: [],
       rentAdvance: '',
-      StartDate: '',
+      startDate: '',
       occupancy: '',
       email: '',
       otherComments: '',
@@ -44,6 +44,7 @@ export default function RenterReportForm({ address }) {
       waterTank: '',
       rateManager: '',
       rateResponse: '',
+      rateH: '',
     },
 
     onSubmit: async (values) => {
@@ -84,8 +85,10 @@ export default function RenterReportForm({ address }) {
         waterTank: checkIfTrue(values.waterTank),
         startDate: values.startDate,
         rateManager: values.rateManager,
-        rateResponse: values.rateReponse,
+        rateResponse: values.rateResponse,
+        rateH: values.rateH,
       }
+      console.log(values)
 
       navigate(`/thankyou`, { state: { address: address } })
       postReport(formattedData)
@@ -184,7 +187,11 @@ export default function RenterReportForm({ address }) {
                 <div>
                   Rate property manager <br></br> responsiveness
                 </div>
-                <select className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+                <select
+                  className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+                  onChange={formik.handleChange}
+                  name="rateManager"
+                >
                   <option>⭐</option>
                   <option>⭐⭐</option>
                   <option>⭐⭐⭐</option>
@@ -197,7 +204,11 @@ export default function RenterReportForm({ address }) {
                 <div>
                   Rate property manager <br></br> out of 5
                 </div>
-                <select className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10">
+                <select
+                  className="w-32 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+                  onChange={formik.handleChange}
+                  name="rateResponse"
+                >
                   <option>⭐</option>
                   <option>⭐⭐</option>
                   <option>⭐⭐⭐</option>
@@ -262,7 +273,7 @@ export default function RenterReportForm({ address }) {
                   onChange={formik.handleChange}
                 />
               </div>
-              <div className="w-full md:w-1/2 mb-3 space-x-3 ">
+              <div className="w-full md:w-1/2 mb-3">
                 <label className="flex" htmlFor="pets">
                   Are Pets Allowed?
                 </label>
@@ -275,13 +286,11 @@ export default function RenterReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-gray-800 ml-1 mr-3"
                     htmlFor="pets"
                   >
                     Dogs
                   </label>
-                </div>
-                <div className="form-check form-check-inline">
                   <input
                     name="petsCats"
                     type="checkbox"
@@ -290,7 +299,7 @@ export default function RenterReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                   <label
-                    className="form-check-label inline-block text-gray-800"
+                    className="form-check-label inline-block text-gray-800 ml-1"
                     htmlFor="pets"
                   >
                     Cats
@@ -347,7 +356,7 @@ export default function RenterReportForm({ address }) {
                 </div>
               </div>
               <div className="flex flex-row mb-2">
-                <div className="w-full md:w-1/3">
+                <div className="w-full md:w-1/2">
                   <label className="flex" htmlFor="waterTank">
                     Is there a water tank?
                   </label>
@@ -359,100 +368,107 @@ export default function RenterReportForm({ address }) {
                   />
                 </div>
 
-                <div className="w-full md:w-1/1 pl-48 ">
+                <div className="w-full md:w-1/2 ">
                   <div className="inset-y-0 right-0">
-                    <span className="underline flex">Is there Insulation?</span>
+                    <span className=" flex">Is there Insulation?</span>
                   </div>
 
-                  <div className="w-full md:w-1/6">
-                    <label
-                      className="inline-block"
-                      htmlFor=" homeHealthInsulationWall"
-                    >
+                  <div className="w-full flex">
+                    <div>
+                      <label
+                        className="inline-block pr-8"
+                        htmlFor=" homeHealthInsulationWall"
+                      >
+                        Wall
+                      </label>
                       <input
-                        className="ml-2 mr-1 mb-1 flex flex"
+                        className=" mr-1 mb-1 flex flex"
                         type="checkbox"
                         name="homeHealthInsulationWall"
                         id="homeHealthInsulationWall"
                         onChange={formik.handleChange}
                       />
-                      Wall
-                    </label>
-                  </div>
-                  <div className="w-full md:w-1/6">
-                    <label
-                      className="inline-block"
-                      htmlFor="homeHealthInsulationCeiling"
-                    >
+                    </div>
+                    <div>
+                      <label
+                        className="inline-block pr-8"
+                        htmlFor="homeHealthInsulationCeiling"
+                      >
+                        Ceiling
+                      </label>
                       <input
-                        className="ml-2 mr-1 mb-1 flex"
+                        className=" mr-1 mb-1 flex"
                         type="checkbox"
                         name="homeHealthInsulationCeiling"
                         id="homeHealthInsulationCeiling"
                         onChange={formik.handleChange}
                       />
-                      Ceiling
-                    </label>
-                  </div>
-                  <div className="w-full md:w-1/6">
-                    <label
-                      className="inline-block"
-                      htmlFor="homeHealthInsulationFloor"
-                    >
+                    </div>
+                    <div>
+                      <label
+                        className="inline-block"
+                        htmlFor="homeHealthInsulationFloor"
+                      >
+                        Floor
+                      </label>
                       <input
-                        className="ml-2 mr-1 mb-1 flex"
+                        className=" mr-1 mb-1 flex"
                         type="checkbox"
                         name="homeHealthInsulationFloor"
                         id="homeHealthInsulationFloor"
                         onChange={formik.handleChange}
                       />
-                      Floor
-                    </label>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="flex pt-2">
-                <div className="w-full md:w-1/3 mb-2">
-                  <label className="flex" htmlFor="ventilationSystem">
-                    <input
-                      type="checkbox"
-                      name="ventilationSystem"
-                      id="ventilationSystem"
-                      onChange={formik.handleChange}
-                    />
-                    Is there ventilation?
-                  </label>
+              <div className="flex flex-row mb-2">
+                <div className="w-full md:w-1/2 mb-2">
+                  <div className="inset-y-0 right-0">
+                    <label htmlFor="ventilationSystem">
+                      Is there ventilation?
+                    </label>
+                  </div>
+                  <input
+                    type="checkbox"
+                    name="ventilationSystem"
+                    id="ventilationSystem"
+                    onChange={formik.handleChange}
+                  />
                 </div>
 
                 {/* Extraction */}
-                <div className="w-full md:w-1/1 pl-48 space-x-5">
+                <div className="w-full md:w-1/2 ">
                   <label
                     className="inline-block"
                     htmlFor="homeHealthInsulationFan"
                   >
-                    <input
-                      className="ml-2 mr-1 mb-1 flex"
-                      type="checkbox"
-                      name="homeHealthInsulationFan"
-                      id="homeHealthInsulationFan"
-                      onChange={formik.handleChange}
-                    />
                     Bathroom Extractor
                   </label>
-                  <label className="inline-block" htmlFor="homeHealthRangeHood">
-                    <input
-                      className="ml-2 mr-1 mb-1 flex"
-                      type="checkbox"
-                      name="homeHealthRangeHood"
-                      id="homeHealthRangeHood"
-                      onChange={formik.handleChange}
-                    />
+                  <input
+                    className="mr-1 mb-1 flex"
+                    type="checkbox"
+                    name="homeHealthInsulationFan"
+                    id="homeHealthInsulationFan"
+                    onChange={formik.handleChange}
+                  />
+                  <label
+                    className="inline-block ml-0"
+                    htmlFor="homeHealthRangeHood"
+                  >
                     Kitchen Rangehood
                   </label>
+                  <input
+                    className=" mr-1 mb-1 flex"
+                    type="checkbox"
+                    name="homeHealthRangeHood"
+                    id="homeHealthRangeHood"
+                    onChange={formik.handleChange}
+                  />
                 </div>
               </div>
               <div className="flex flex-wrap mb-3 pt-2">
-                <div className="md:w-1/3">
+                <div className="md:w-1/2">
                   <label htmlFor="energy">Energy Sources</label>
                   <input
                     className="py-2 px-3 h-6 w-60 border-black border rounded-full bg-stone-200"
@@ -462,7 +478,7 @@ export default function RenterReportForm({ address }) {
                     onChange={formik.handleChange}
                   />
                 </div>
-                <div className="md:w-1/2 px-2">
+                <div className="md:w-1/2 pr-2">
                   <label htmlFor="noise">
                     Is there any neighborhood noise?
                   </label>
@@ -489,7 +505,8 @@ export default function RenterReportForm({ address }) {
               <div>Rate the house out of 5</div>
               <select
                 name="rateH"
-                className="w-20 bg-stone-200 h-9 py-2 px-3 w-60 border-black border rounded-lg bg-stone-200 mb-10"
+                className="w-32 bg-stone-200 h-9 py-2 px-3 border-black border rounded-lg bg-stone-200 mb-10"
+                onChange={formik.handleChange}
               >
                 <option>🏡</option>
                 <option>🏡🏡</option>
