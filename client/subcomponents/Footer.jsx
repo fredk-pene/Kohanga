@@ -5,13 +5,9 @@ export default function Header() {
   return (
     <div className="footer">
       <div className="w-full flex flex-wrap mx-3 ">
-        {/* <div className="flex flex-wrap mb-2"> */}
 
-        {/* <div className="w-full md:w-1/2"> */}
         <div className=" w-full md:w-1/4 px-3 mb-4 pt-2 align-baseline text-center  text-4xl uppercase pt-20">
-          {/* <h1 className=""> */}
           <Link to="/">kōhanga</Link>
-          {/* </h1> */}
         </div>
 
         <div className="w=full md:w-1/4 px-3 mb-4 pt-2">

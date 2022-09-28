@@ -4,7 +4,6 @@ import BasicPropertyInfo from '../subcomponents/PropertyDetails/BasicPropertyInf
 import NoReports from '../subcomponents/PropertyDetails/NoReports'
 import Report from '../subcomponents/PropertyDetails/Report'
 import UserNavigation from '../subcomponents/UserNavigation'
-// import AdminNavigation from '../subcomponents/AdminNavigation'
 
 import Footer from '../subcomponents/Footer'
 
@@ -39,9 +38,6 @@ export default function PropertyDetails() {
         )}
       </div>
       <UserNavigation address={id} />
-      {/* Admin Navigation 
-      <AdminNavigation />
-          */}
       <Footer />
     </>
   )

@@ -88,7 +88,6 @@ export default function RenterReportForm({ address }) {
         rateResponse: values.rateResponse,
         rateH: values.rateH,
       }
-      console.log(values)
 
       navigate(`/thankyou`, { state: { address: address } })
       postReport(formattedData)
@@ -230,7 +229,6 @@ export default function RenterReportForm({ address }) {
                 onChange={formik.handleChange}
               />
             </div>
-            {/* YOUR DETAILS */}
             <div className="border-black border-t">
               <div className=" border-black border-b small-title px-3">
                 Your Details
@@ -257,7 +255,6 @@ export default function RenterReportForm({ address }) {
             </div>
           </div>
           <br></br>
-          {/* HOUSE HEALTH */}
           <div className="w-full md:w-1/2 mb-6 md:mb-0 border-black border-l ">
             <div className="mb-2 border-black border-b small-title px-3">
               House Health
@@ -437,7 +434,6 @@ export default function RenterReportForm({ address }) {
                   />
                 </div>
 
-                {/* Extraction */}
                 <div className="w-full md:w-1/2 ">
                   <label
                     className="inline-block"
@@ -501,7 +497,7 @@ export default function RenterReportForm({ address }) {
                   onChange={formik.handleChange}
                 />
               </div>
-              {/* HOUSE RATING */}
+
               <div>Rate the house out of 5</div>
               <select
                 name="rateH"
