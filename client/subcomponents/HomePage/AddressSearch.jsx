@@ -46,9 +46,7 @@ export default function addressSearch() {
     <>
       <form onSubmit={formik.handleSubmit}>
         <div className="search-container">
-
           <div className="searchBar ml-56 -mr-4">
-
             {/* <p>This is the seach bar</p> */}
             {showAnyErrors('address')}
             <input
@@ -80,7 +78,7 @@ export default function addressSearch() {
         </div>
       </form>
       <p className="homeDiscription">
-        Enter an address to get a<br></br> comprohensive property report,
+        Enter an address to get a<br></br> comprehensive property report,
         <br></br> from renters like you.
       </p>
     </>

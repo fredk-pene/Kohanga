@@ -28,10 +28,11 @@ export default function ReportSubmit() {
           <div className="report-submit-header">
             <h2 className="property-details-text">Report Submission</h2>
             <p className="report-submit-copy">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              Please help any potential future renters of this house by filling
+              in as many of these fields as possible. If you are unsure of any
+              of the answers please leave the field blank. If you are the
+              landlord or property manager for this property, make sure to
+              toggle to the Landlord form just below.
             </p>
             <p className="small-title">Reporting As:</p>
             <div className="report-toggle-switch">

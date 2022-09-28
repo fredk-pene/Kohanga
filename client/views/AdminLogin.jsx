@@ -29,10 +29,10 @@ export default function PropertyDetails() {
         <div className="report-submit-header">
           <h2 className="property-details-text">Pending Submissions</h2>
           <p className="report-submit-copy">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            These are all of the reports that have been submitted and need to be
+            approved. After checking that the data submitted looks legitimate,
+            you can approve or deny the report with the buttons below each
+            submission.
           </p>
         </div>
         {!reports ? (
