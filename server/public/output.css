@@ -834,20 +834,16 @@ video {
   padding-top: 0.75rem;
 }
 
-.pl-36 {
-  padding-left: 9rem;
-}
-
 .pr-8 {
   padding-right: 2rem;
 }
 
-.pt-7 {
-  padding-top: 1.75rem;
-}
-
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pt-7 {
+  padding-top: 1.75rem;
 }
 
 .text-center {
