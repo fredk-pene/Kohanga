@@ -133,6 +133,7 @@ video {
   min-width: 320px;
 }
 
+
 .report-submission-details { 
   display: flex;
   flex-direction: row;
@@ -175,7 +176,7 @@ video {
 
 .report-column-container { 
   border-top: 1px solid black;
-padding: 30px 0px 20px 15px;
+padding: 30px 15px 20px 15px;
 }
 
 .approve-buttons-container {
