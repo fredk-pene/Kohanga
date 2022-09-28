@@ -27,7 +27,11 @@ export default function Report({ report, loadReports }) {
           {report.report_submitter}&nbsp;&nbsp;&nbsp;&nbsp;Status:&nbsp;
           {report.status}
         </p>
+
         <div className="report-submission-details">
+          <p className="property-details-secondary-text">
+            Address:<br></br> {report.address}
+          </p>
           <p className="property-details-secondary-text">
             Email:<br></br> {report.email}
           </p>
@@ -45,10 +49,6 @@ export default function Report({ report, loadReports }) {
           </p>
         </div>
         <div className="property-details-additional-comments">
-          <p className="property-details-secondary-text">
-            Address:<br></br> {report.address}
-          </p>
-
           <p className="property-details-secondary-text">
             Additional Comments:<br></br> {report.other_comments}
           </p>
