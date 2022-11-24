@@ -1,8 +1,10 @@
 # **KŌHANGA**
 
 ## About
-Final group project for Dev Academy Aoteroa, The concept of KŌHANGA is to allow current tenants and people searching for rental homes in Aotearoa (New Zealand) to dynamically share/view experiences and information about places they are presently residing in or looking to move into.
-
+Final group project for Dev Academy Aoteroa, The concept of KŌHANGA is to allow current tenants and people searching for rental homes in Aotearoa (New Zealand) to dynamically share/view experiences and information about places they are presently residing in or looking to move into. 
+<br>
+<br>
+<ins>MVP</ins>
 - Search any address within New Zealand
 - View/Submit a home report
 
