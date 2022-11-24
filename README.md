@@ -1,7 +1,4 @@
-
 # **KŌHANGA**
-
-<img  align='center' src='https://user-images.githubusercontent.com/107820695/203681024-17dc9881-fba3-422e-97ca-328843154016.gif'>
 
 ## About
 Final group project for Dev Academy Aoteroa, The concept of KŌHANGA is to allow current tenants and people searching for rental homes in Aotearoa (New Zealand) to dynamically share/view experiences and information about places they are presently residing in or looking to move into.
@@ -10,7 +7,11 @@ Final group project for Dev Academy Aoteroa, The concept of KŌHANGA is to allo
 - View/Submit a home report
 
 ## Feature ideas we planned to implement.
-...
+- Image upload feature
+- Ability to search/filter by
+- Auth0 account sign up
+
+<img  align='center' src='https://user-images.githubusercontent.com/107820695/203851403-e7a5f034-484a-4828-9b3d-b83f0cf88060.gif'>
 
 ###### Contributors
 <sup> Karl, Fergus, Mikesh, Fred </sup>
