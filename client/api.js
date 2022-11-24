@@ -37,7 +37,7 @@ export function getAddressSuggestions(string) {
     .get(`${rootUrl}/address`)
     .query({ search: string })
     .then((res) => res.body)
-    .catch((error) => console.error(error))
+    .catch(logError)
 }
 
 export function getOwnerPropertyInformation(id) {

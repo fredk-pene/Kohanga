@@ -27,7 +27,7 @@ export default function BasicPropertyInfo({ reports }) {
     }
   }
 
-  const googleKey = ''
+  const key = ``
   return loading ? (
     <p>Loading....</p>
   ) : (
@@ -95,7 +95,7 @@ export default function BasicPropertyInfo({ reports }) {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${googleKey}
+            src={`https://www.google.com/maps/embed/v1/place?key=${key}
     &q=${sampleData?.address}`}
           ></iframe>
         </div>
