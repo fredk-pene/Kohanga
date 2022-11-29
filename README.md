@@ -28,4 +28,4 @@ Final group project for Dev Academy Aoteroa, The concept of KŌHANGA is to allo
 <sup> This project is licensed under the MIT License </sup>
 
 ## Project status
-No longer developing
+No longer developing & not deployed
